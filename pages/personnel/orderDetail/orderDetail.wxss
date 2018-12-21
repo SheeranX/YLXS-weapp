@@ -1,0 +1,101 @@
+/* pages/personnel/orderDetail/orderDetail.wxss */
+.orderDetail-container{
+  background-color: #ededf6;
+  overflow: hidden;
+}
+.font26{
+  font-size: 26rpx;
+}
+.greenColor{
+  color: #00b272;
+}
+.redColor{
+  color: #ea3a2f;
+}
+.blueColor{
+  color: #4b88fb;
+}
+
+.mg-top20{
+  margin-top: 20rpx;
+}
+.float-right{
+  float: right;
+}
+.orderDetail-box{
+padding: 10rpx 20rpx 0 20rpx;
+overflow: hidden;
+background-color: #fff;
+/* margin: 20rpx 0; */
+border-top:2rpx solid #eee;
+}
+.orderDetail-box-header{
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  border-bottom:1rpx solid #eee;
+}
+.orderDetail-body{
+  padding: 30rpx 60rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.order-label{
+  width: 180rpx;
+  color: #999999;
+}
+.orderBtnGroup{
+  float: right;
+  padding: 20rpx 0;
+}
+.orderBtn{
+  border: 1rpx solid #999999;
+  width: 150rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  color: #666666;
+}
+.clearfloat{
+  clear: both;
+}
+
+.orderDeatain-info{
+  margin: 20rpx 0;
+  background: #fff;
+  overflow: hidden;
+}
+.orderDetail-title{
+  font-weight: 500;
+  margin: 30rpx 20rpx 0 20rpx;
+}
+.orderDetail-content{
+  padding: 30rpx 60rpx 50rpx 80rpx;
+}
+.order-remark{
+  margin-bottom: 120rpx;
+  overflow: hidden;
+}
+.fixedBtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-top: 2rpx solid #eee;
+  box-shadow: 0 -5rpx 20rpx #eee;
+}
+.fixedBtn .orderBtn{
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 45rpx;
+}
+.payBtn{
+  background-color: #e7536c;
+  color: #fff;
+  border-color: #e7536c;
+}
+

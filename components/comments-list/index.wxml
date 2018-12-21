@@ -1,0 +1,55 @@
+<view class='container bg-color'>
+  <i-row i-class="comment-grade-container">
+    <i-col span="8" i-class="col-class">
+      <view class='orangeColor font38 comment-grade bg-white'>
+        <text>4.2</text>
+        <text class='font32'>分</text>
+        <text class='margin-left-10 '>很好</text>
+      </view>
+    </i-col>
+    <i-col span="16" i-class="col-class">
+      <i-col span="12" i-class="col-class">
+        <view class='font28 grade-box'>
+          <text>酒店服务(4.9)</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+          <text>酒店设施(4.9)</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+        </view>
+      </i-col>
+      <i-col span="12" i-class="col-class">
+        <view class='font28 grade-box'>
+          <text>酒店卫生(4.9)</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+          <text>酒店位置(4.9)</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+        </view>
+      </i-col>
+    </i-col>
+  </i-row>
+
+  <view class='comment-list bg-white' wx:for="{{list}}" wx:key="item" wx:for-item="item">
+    <view class='comment-list-item'>
+      <view class='font32 list-item-head'>
+        <text>{{item.nickName}}</text>
+        <text class='gray txt-right typeInfo'>{{item.roomType}}</text>
+      </view>
+      <i-rate count="{{5}}" value="{{item.rate}}" size="18"></i-rate>
+      <view class='list-item-content font32'>{{item.content}}</view>
+      <view class='list-item-footer'>
+        <text class='font28 gray'>{{item.dateTime}}</text>
+        <view class='likeBtn font28' bindtap='likeBtnClick'>
+          <i-icon type="praise" size='20' />
+          <text>有用(192)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

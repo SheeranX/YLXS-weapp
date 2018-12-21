@@ -1,0 +1,64 @@
+/* components/filter/index.wxss */
+.btm-bar{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, .1);
+  margin-top: 20rpx;
+}
+.btn{
+  height: 60rpx!important;
+  line-height: 60rpx!important;
+  font-size: 24rpx!important;
+  width: 200rpx;
+}
+.checkbox{
+  display: inline-block!important;
+  font-size: 24rpx;
+  border: 1px solid #ccc;
+  padding: 12rpx 10rpx;
+  margin: 5rpx;
+  min-width: 100rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  color: #3e3e3e;
+}
+.checked{
+  border: 1px solid #2d8cf0!important;
+  color: #2d8cf0;
+}
+checkbox{
+  display: none;
+}
+
+.padding-between{
+  padding: 0 30rpx;
+}
+.font24{
+  font-size: 24rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.blod{
+  font-weight: 600;
+}
+.title{
+  display: inline-block;
+  padding: 20rpx 10rpx;
+}
+.list{
+  border-bottom: 1px solid #eee;
+  padding: 10rpx 30rpx 40rpx 30rpx;
+}
+.list:last-child{
+  border-bottom: none;
+}
+.txt-align{
+  text-align: center;
+}
+.item-bar{
+  padding: 20rpx 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+}

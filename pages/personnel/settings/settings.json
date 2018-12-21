@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-input": "../../../components/iview/input/index",
+    "i-cell": "../../../components/iview/cell/index",
+    "i-divider": "../../../components/iview/divider/index"
+  }
+}

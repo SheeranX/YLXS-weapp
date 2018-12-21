@@ -1,0 +1,7 @@
+/* pages/travelStrategy/detail/index.wxss */
+.tags>view{
+  padding: 0 10rpx;
+}
+.status>view{
+  padding: 20rpx 10rpx;
+}

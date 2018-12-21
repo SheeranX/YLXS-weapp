@@ -1,0 +1,4 @@
+<!--pages/travelStrategy/compass/index.wxml-->
+<view class='container'>
+   富文本上传，需解析富文本
+</view>

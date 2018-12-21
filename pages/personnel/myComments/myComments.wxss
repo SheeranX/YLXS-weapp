@@ -1,0 +1,38 @@
+/* pages/personnel/myComments/myComments.wxss */
+.redColor{
+  color: #eb536c;
+}
+.myComments-container{
+  background-color: #ededf6;
+}
+.myComments-card:first-child{
+  border-top: 1rpx solid #eee;
+}
+.myComments-card{
+  padding: 20rpx 20rpx;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.card-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-content{
+  font-size: 32rpx;
+  padding: 20rpx 0rpx;
+}
+.mg-right40{
+  margin-right: 40rpx;
+}
+
+.card-desc{
+  background-color:#f5f5f5;
+  padding: 30rpx 20rpx; 
+}
+.card-info{
+  display: flex;
+  justify-content: space-between;
+  margin-top:20rpx;
+}

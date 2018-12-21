@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-row": "../iview/row/index",
+    "i-col": "../iview/col/index",
+    "i-rate":"../iview/rate/index",
+    "i-box":"../box/index"
+  }
+}

@@ -1,0 +1,22 @@
+<!--pages/personnel/myComments/myComments.wxml-->
+<view class='myComments-container'>
+  <view class='myComments-card' wx:for="{{list}}" wx:key="{{item}}" wx:for-item="item">
+    <view class='card-head'>
+      <view>
+        <i-rate value="{{item.rate}}" size="24"></i-rate>
+      </view>
+      <view class='icon-group'>
+        <i-icon type="brush" size='24' i-class='mg-right40' />
+        <i-icon type="trash" size='24' />
+      </view>
+    </view>
+    <view class='card-content'>{{item.content}}</view>
+    <view class='card-desc font32'>
+      <view class='info'>{{item.cardTitle}}</view>
+      <view class='card-info'>
+        <text>{{item.cardName}}</text>
+        <text class='redColor'>￥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

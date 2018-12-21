@@ -1,0 +1,61 @@
+/* pages/personnel/commentDetail/commentDetail.wxss */
+
+.commentDetail-container {
+  background-color: #ebebf6;
+  /* height: 100%; */
+  overflow-y:auto; 
+}
+
+.mg-bottom20 {
+  margin-bottom: 20rpx;
+}
+
+.comment-card {
+  padding: 20rpx 40rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.h-center {
+  align-items: center;
+}
+
+.border-top {
+  border-top: 1rpx solid #eee;
+}
+
+textarea {
+  width: 620rpx;
+  height: 400rpx;
+  padding: 25rpx 20rpx 0 30rpx;
+  border: 1rpx solid #eee;
+}
+
+.upload{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1rpx solid #eee;
+}
+
+.upload-icon{
+  text-align: center;
+  margin:10rpx 8rpx;
+}
+
+.upload-desc{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: #666; 
+}
+.sendComment {
+  margin: 40rpx auto;
+  width: 500rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  background-color: #e9536c;
+  color: #fff;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+

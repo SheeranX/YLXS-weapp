@@ -1,0 +1,13 @@
+<!--pages/intoLijiang/detail/index.wxml-->
+<view class="container bg-white">
+  <view class='title'>
+    <text class='font32 bold'>王境泽真香警告</text>
+  </view>
+  <i-portrait src="https://bulma.io/images/placeholders/128x128.png" title="施瓦辛格" browser="1234" time="2013-07-23 16:00:00"></i-portrait>
+  <i-divider content=""></i-divider> 
+  <view class='content font24 padding-between'>
+    <text>富文本上传内容需要进行富文本转换</text>
+  </view>
+</view>
+<i-go-top isShow="{{isGoTop}}"></i-go-top>
+<i-float-review isMessage="{{true}}" likeCount="100" messageCount="10" bind:like="like" bind:message="message"></i-float-review>

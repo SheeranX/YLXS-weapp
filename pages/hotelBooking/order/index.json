@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-icon": "../../../components/iview/icon/index",
+    "i-row": "../../../components/iview/row/index",
+    "i-col": "../../../components/iview/col/index",
+    "i-divider": "../../../components/iview/divider/index",
+    "i-input-number":"../../../components/iview/input-number/index",
+    "modal":"../../../components/modal/index"
+  }
+}

@@ -1,0 +1,19 @@
+<!--components/portrait/index.wxml-->
+<!-- 该组件包括头像，浏览量，时间 -->
+<view style='padding:30rpx 0 10rpx 0'>
+  <i-row>
+    <i-col span="16" offset='2'>
+      <i-avatar src="{{src}}" size="large" i-class="img"></i-avatar>
+      <text class='font28'>{{title}}</text>
+    </i-col>
+     <i-col span="6" i-class="browser" wx:if="{{browser?true:false}}">
+        <text class='font24 bold'>{{browser}}</text>
+        <text class="font22">浏览</text>
+     </i-col>
+  </i-row>
+  <i-row>
+     <i-col span="10" offset='5'>
+      <text class='font22'>{{time}}</text>
+     </i-col>
+  </i-row>
+</view>

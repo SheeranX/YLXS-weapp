@@ -1,0 +1,13 @@
+<!--pages/personnel/settings/settings.wxml-->
+<view class='setting-container'>
+<i-cell title="会员头像" url='' is-link>
+  <image slot="footer" class='img-size' src='../../../assets/images/icon-avator.png'></image>
+</i-cell>
+  <i-input value="{{ value1 }}" type='text' title="会员头像" placeholder="会员头像" />
+  <i-input value="{{ value2 }}" type="number" title="会员账号" placeholder="请输入会员账号" />
+  <i-input value="{{ value3 }}" type='text' title="会员昵称" placeholder="请输入会员昵称" />
+  <i-input value="{{ value4 }}" type="text" title="邮箱" placeholder="请输入邮箱" />
+  <i-input value="{{ value5 }}" type="number" title="手机号" placeholder="请输入手机号" />
+  <i-cell title="修改密码" is-link url="" i-class="modify-pass"></i-cell>
+</view>
+<view class='save-setting'>保存</view>

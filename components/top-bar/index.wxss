@@ -1,0 +1,27 @@
+/* components/top-bar/index.wxss */
+.txt-align{
+  text-align: center;
+}
+.item-bar{
+  padding: 20rpx 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+  position: relative;
+  z-index: 999;
+  background: #fff;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+.font24{
+  font-size: 24rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.filter{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align:sub;
+  padding-left: 10rpx;
+}

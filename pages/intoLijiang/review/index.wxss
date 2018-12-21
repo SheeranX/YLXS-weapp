@@ -1,0 +1,34 @@
+/* pages/intoLijiang/review/index.wxss */
+.full-hd{
+  width: 100%;
+}
+.content{
+  padding: 0 40rpx 0 60rpx;
+}
+.scroll-h{
+  height: 300px;
+}
+.container{
+  height: 300rpx;
+}
+.txt-r{
+  text-align: left!important;
+}
+.textarea-h{
+  height: 300rpx;
+  padding-top: 10rpx;
+}
+.send{
+  text-align: right!important;
+  color: #4886f9!important;
+  border: none!important;
+}
+.input-h{
+  height: 250rpx!important;
+  max-height: 280rpx;
+}
+
+.re-title{
+  padding: 10rpx 0;
+  border-bottom: 1px solid #eee;
+}

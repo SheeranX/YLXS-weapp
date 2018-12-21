@@ -1,0 +1,109 @@
+<!--pages/hotelBooking/order/index.wxml-->
+<import src="../../../plugins/datepicker/index.wxml"/>
+<view class='container bg-white padding-between'>
+  <i-row>
+    <i-col span='19'>
+      <text class='font28 bold'>希尔顿总统套房</text>
+    </i-col>  
+    <i-col span='5'>
+      <text class='font28 danger' bindtap='notice'>购买须知></text>
+    </i-col>
+  </i-row>
+  <i-divider i-class="divider"/>
+ <view class='font28 txt-center'>
+ <i-row>
+  <i-col span='10'>
+    <view class='flex-column' bindtap="showDatepicker">
+      <text class='gray'>入住</text>
+      <text class='info'>{{datepicker.curMonth||'--'}}月{{chooseDay||'--'}}日</text>
+    </view>
+  </i-col>
+  <i-col span='4'>
+      <view class='total'>
+        <text>共{{duration}}晚</text>
+      </view>
+  </i-col>
+  <i-col span='10'>
+    <view class='flex-column' bindtap="showDatepicker">
+      <text class='gray'>离店 </text>
+      <text class='info'>09月29日</text>
+    </view>
+  </i-col>
+ </i-row>
+ </view>
+  <i-divider i-class="divider"/>
+  <view>
+    <i-row>
+      <i-col span="6">
+        <text class='font28 bold'>购买数量</text>
+      </i-col>
+      <i-col span="12" offset="6">
+         <view class='flex-row'>
+           <view class='operate minus' bindtap='minus'>
+            <text>-</text>
+           </view>
+           <view>
+            <input type='number' class='num' maxlength='3' value="{{value}}"></input>
+           </view>
+           <view class='operate plus' bindtap="plus">
+            <text>+</text>
+           </view>
+         </view>
+      </i-col>
+    </i-row>
+  </view>
+  <i-divider i-class="divider"/>
+  <view class='flex-column font24'>
+    <text class='gray'>3月29日当日使用有效</text>
+    <text class='font28 info padding-top'>此产品在2018年06月20日 00:00:00前可退款</text>
+  </view>
+   <i-divider i-class="divider"/>
+</view>
+<view class='container bg-white margin-top30 padding-between'>
+   <view>
+      <text class='font28 bold'>订单信息</text>
+   </view>
+   <i-divider i-class="divider"/>
+    <view class='flex-row s-between'>
+      <view class='flex-column font28'>
+        <text>入住人信息</text>
+        <view class='padding-top'>
+          <text>需要</text>
+          <text class='danger'>1位</text>
+          <text>用于入住使用</text>
+        </view>
+      </view>
+      <view>
+       <i-icon type='mine_fill' size='24' color='#4886f9'></i-icon>
+      </view>
+    </view>
+    <form bindsubmit="formSubmit" class='form'>
+      <view class='form-group flex-row'>
+        <text class='font28 bold'>姓名</text>
+        <input type='text' maxlength="15" placeholder='取票人姓名'></input>
+      </view>
+       <view class='form-group flex-row'>
+        <text class='font28 bold'>手机号</text>
+        <input type='number' maxlength="11" placeholder='用于接收订单信息'></input>
+      </view>
+    </form>
+</view>
+<view class='flex-row font28 s-between btm-bar'>
+    <view class='padding-between'>
+        <text>应付总额：</text><text class='warning'>￥280</text>
+    </view>
+    <view class='go-pay'>
+      <text>去支付</text>
+    </view>
+</view>
+ <modal isShow="{{isShowModal}}" position="bottom">
+  <view>
+    我是购票须知
+  </view>
+ </modal>
+ <!-- <datepicker></datepicker> -->
+ <view class="datepicker-box">
+	 <!-- <button type="primary" bindtap="showDatepicker"> 点击唤起日期选择器 </button>  -->
+   <template is="datepicker" data="{{...datepicker}}" />	
+</view>
+

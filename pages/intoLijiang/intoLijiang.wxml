@@ -1,0 +1,40 @@
+<!--pages/intoLijiang/intoLijiang.wxml-->
+<wxs module="filter" src="../../assets/scripts/filter.wxs"></wxs>
+<view class='container'>
+  <i-scroll-view i-class='scroll-x' scroll="{{false}}">
+      <i-button type="{{item.selected?'primary':'ghost'}}" 
+       inline="true" wx:for="{{list}}"
+       wx:for-item="item"
+       wx:for-index="idx" 
+       wx:key="unique" 
+       bindtap='selected' 
+       data-id="{{item.id}}">{{item.text}}</i-button>
+  </i-scroll-view>
+</view>
+<view class='container bg-white margin-top30' wx:for="{{articleArr}}"  wx:for-item="item" wx:key="unique">
+  <navigator url='detail/index' hover-class='none'>
+    <i-panel title="{{item.title}}">
+    <view style="padding: 15px;">
+      <view class='card'>
+        <image src='{{item.url}}' class='img-responsive'></image>
+        <view class='card-txt'>
+          <text>{{filter.ellipsis(item.text,40)}}</text>
+        </view>
+      </view>
+    </view>
+  </i-panel>
+  </navigator>
+</view>
+ <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+ <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>
+ <i-go-top isShow="{{isGoTop}}"/>
+<!-- <wxs module="e">
+  var ellipsis = function(text){
+    if(text.length>40)
+      return text.substring(0,40)+"..."
+    else
+      return text
+  }
+   module.exports.ellipsis = ellipsis;
+</wxs> -->
+

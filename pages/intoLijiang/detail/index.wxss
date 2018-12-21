@@ -1,0 +1,4 @@
+/* pages/intoLijiang/detail/index.wxss */
+.title{
+  padding: 40rpx 0 0 60rpx;
+}

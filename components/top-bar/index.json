@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modal": "../modal/index",
+    "i-row": "../iview/row/index",
+    "i-col": "../iview/col/index",
+    "i-icon":"../iview/icon/index"
+  }
+}

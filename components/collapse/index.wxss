@@ -1,0 +1,25 @@
+/* components/collapse/index.wxss */
+.hide{
+  display: none;
+}
+.collapse-header{
+  min-height: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.collapse-content{
+  background: #e7e7e7;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, .2);
+  padding: 10rpx 20rpx;
+  transition: all ease 1s;
+  box-sizing: content-box;
+  display: block;
+  min-height: 100rpx;
+}
+.trans-arrow{
+  transform: rotate(180deg);
+  transition: all ease .5s;
+}
+.arrow{
+  transition: all ease 0.5s;
+}

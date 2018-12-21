@@ -1,0 +1,10 @@
+{
+  "usingComponents":{
+    "i-row": "../../components/iview/row/index",
+    "i-col": "../../components/iview/col/index",
+    "i-icon": "../../components/iview/icon/index",
+    "i-tabs": "../../components/iview/tabs/index",
+    "i-tab": "../../components/iview/tab/index",
+    "i-load-more": "../../components/iview/load-more/index"
+  }
+}

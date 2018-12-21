@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-row": "../../components/iview/row/index",
+    "i-col": "../../components/iview/col/index",
+    "i-progress": "../../components/iview/progress/index",
+    "i-rate": "../../components/iview/rate/index",
+    "i-icon": "../../components/iview/icon/index"
+  }
+}

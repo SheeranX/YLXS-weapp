@@ -1,0 +1,109 @@
+<!--pages/travelStrategy/travelStrategy.wxml-->
+<view class='container bg-white'>
+  <view class='flex-row s-between'>
+    <view class='compass-box' bindtap='goCompass'>
+      <image src='https://bulma.io/images/placeholders/480x480.png' class='img-responsive img-round'></image>
+      <view class='box-content font24'>
+        <view class='title'>
+          <text class='font28 bold'>自驾游指南</text>
+        </view>
+        <view class='intr flex-column'>
+          <text>纳西妈妈说:</text>
+          <text class='txt-indent'>丽江非常适合自驾游</text>
+        </view>
+      </view>
+    </view>
+    <view class='compass-box' bindtap='goCompass'>
+      <image src='https://bulma.io/images/placeholders/480x480.png' class='img-responsive img-round'></image>
+      <view class='box-content font24'>
+        <view class='title'>
+          <text class='font28 bold'>自由行指南</text>
+        </view>
+        <view class='intr flex-column'>
+          <text>一种更新的游玩方式:</text>
+          <text class='txt-indent'>徒步玉龙雪山</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='container bg-white padding-between margin-top30'>
+  <view>
+    <text class='font28 bold'>注意事项</text>
+    <text class='font22 gray title-left'>你必须知道的事</text>
+  </view>
+  <view class='attention-box'>
+   <view class='swiper-operate'>
+      <view class='pre' bindtap='prev'> 
+          <i-icon type="return" size="28" color="#4886f9"/>
+      </view>
+      <view class='next' bindtap='next'>
+         <i-icon type="enter" size="28" color="#4886f9"/>
+      </view>
+   </view>
+    <swiper current='{{current}}' style='height:280rpx;' circular='{{true}}'>
+      <swiper-item>
+        <view class='txt-center font28 bold attention-title'>
+          <i-icon type="scan" size="28" color="#4886f9"/>
+          <text>人脸识别</text>
+        </view>
+        <view class='font24 txt-indent'>
+          <text>为了防止世界被破坏，为了维护世界的和平，为了爱与正式的邪恶，可爱有迷人的反派角色</text>
+        </view>
+      </swiper-item>
+       <swiper-item>
+        <view class='txt-center font28 bold attention-title'>
+          <i-icon type="systemprompt" size="28" color="#4886f9"/>
+          <text> 景区公告</text>
+        </view>
+        <view class='font24 txt-indent'>
+          <text>为了防止世界被破坏，为了维护世界的和平，为了爱与正式的邪恶，可爱有迷人的反派角色</text>
+        </view>
+      </swiper-item>
+       <swiper-item>
+        <view class='txt-center font28 bold attention-title'>
+          <i-icon type="warning" size="28" color="#4886f9"/>
+          <text>购买须知</text>
+        </view>
+        <view class='font24 txt-indent'>
+          <text>为了防止世界被破坏，为了维护世界的和平，为了爱与正式的邪恶，可爱有迷人的反派角色</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+<view class='container bg-white margin-top30'>
+  <view class='font24 flex-row s-between'>
+     <view class='flex-row tabs'>
+       <text wx:for="{{tabs}}" wx:for-item="item" wx:key="unique" wx:for-index="idx" class='{{idx==currentArticle?"active":""}}' bindtap='switchTab' data-idx='{{idx}}'>{{item}}</text>
+     </view>
+     <view>
+       <i-icon type='editor' color='#ccc' size="20"/>
+       <text class='gray'>写游记</text>
+     </view>
+  </view>
+  <swiper style='height:330rpx;' current='{{currentArticle}}' bindchange="handleSwiper" circular="{{true}}">
+    <swiper-item>
+     <navigator url='detail/index' hover-class='none'>
+       <view class='article'>
+        <image src='https://bulma.io/images/placeholders/480x480.png' class='img-responsive img-round'></image>
+        <view class='article-title bold'>
+          <text class='font28'>停留在瓦尔登湖 又带着鸭舌帽去麦田</text>
+        </view>
+      </view>
+     </navigator>
+    </swiper-item>
+     <swiper-item>
+      <view class='article'>
+        <image src='https://bulma.io/images/placeholders/480x480.png' class='img-responsive img-round'></image>
+        <view class='article-title bold'>
+          <text class='font28'>停留在瓦尔登湖 又带着鸭舌帽去麦田</text>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+ <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+ <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>

@@ -1,0 +1,28 @@
+/* pages/intoLijiang/intoLijiang.wxss */
+page{
+  background: #ecebf4;
+}
+.scroll-x{
+  height: 150rpx;
+  white-space: nowrap;
+}
+.card{
+  height: 400rpx;
+  position: relative;
+}
+
+.card-txt{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 24rpx;
+  padding:0rpx 20rpx;
+  height: 100rpx;
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-indent: 10rpx;
+}

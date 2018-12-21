@@ -1,0 +1,52 @@
+/* pages/personnel/personnel.wxss */
+.icon-group{
+  text-align: right;
+  margin-right: 40rpx;
+}
+.mg-right40{
+  margin-right: 40rpx;
+}
+.nickName{
+  margin: 10rpx 0;
+}
+
+.personel-bg{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 320rpx;
+  z-index: -1;
+}
+
+.personnel-card-box{
+  text-align: center;
+}
+.personnel-card{
+  width: 650rpx;
+  height: 350rpx;
+  background-color: #fff;
+  margin: 20rpx auto;
+  border-radius:10rpx; 
+  box-shadow: 2rpx 5rpx 45rpx #ced5f7;
+}
+.personnel-avator{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:50%;
+  /* background: blue;  */
+  margin: 30rpx 0 10rpx 0; 
+}
+.personnel-gride{
+  border:none !important;
+  color: #666666;
+}
+.personnel-gride-item{
+  border: none !important;
+}
+.img-size{
+  width: 70rpx !important;
+  height: 70rpx !important;
+}
+.margin-top24{
+  margin-top:24rpx; 
+}

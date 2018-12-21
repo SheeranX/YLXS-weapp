@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personnel/personnel",
+    "pages/intoLijiang/intoLijiang",
+    "pages/travelStrategy/travelStrategy",
+    "pages/service/service",
+    "pages/intoLijiang/detail/index",
+    "pages/intoLijiang/review/index",
+    "pages/hotelBooking/list",
+    "pages/hotelBooking/bookingDetail/bookingDetail",
+    "pages/hotelBooking/bookingComments/bookingComments",
+    "pages/travelStrategy/compass/index",
+    "pages/travelStrategy/detail/index",
+    "pages/hotelBooking/bookingOrderPay/bookingOrderPay",
+    "pages/personnel/orderDetail/orderDetail",
+    "pages/personnel/myOrder/myOrder",
+    "pages/hotelBooking/order/index",
+    "pages/pay/index",
+    "pages/personnel/commentDetail/commentDetail",
+    "pages/personnel/myComments/myComments",
+    "pages/personnel/settings/settings"
+  ],
+  "usingComponents": {
+    "i-toast": "/components/iview/toast/index",
+    "i-message": "/components/iview/message/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "selectedColor": "#4b84f7",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/images/icon_home.png",
+        "selectedIconPath": "assets/images/icon_home_hover.png"
+      },
+      {
+        "pagePath": "pages/intoLijiang/intoLijiang",
+        "text": "走进丽江",
+        "iconPath": "assets/images/icon_into.png",
+        "selectedIconPath": "assets/images/icon_into_hover.png"
+      },
+      {
+        "pagePath": "pages/travelStrategy/travelStrategy",
+        "text": "旅游攻略",
+        "iconPath": "assets/images/icon_plan.png",
+        "selectedIconPath": "assets/images/icon_plan_hover.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "客服中心",
+        "iconPath": "assets/images/icon_service.png",
+        "selectedIconPath": "assets/images/icon_service_hover.png"
+      },
+      {
+        "pagePath": "pages/personnel/personnel",
+        "text": "我的",
+        "iconPath": "assets/images/icon_mine.png",
+        "selectedIconPath": "assets/images/icon_mine_hover.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+<!--pages/pay/index.wxml-->
+<view class='container bg-white'>
+  <collapse></collapse>
+</view>

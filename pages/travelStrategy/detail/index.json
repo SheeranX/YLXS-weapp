@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-portrait": "../../../components/portrait/index",
+    "i-divider": "../../../components/iview/divider/index",
+    "i-icon": "../../../components/iview/icon/index",
+    "i-go-top": "../../../components/go-top/index",
+    "i-float-review":"../../../components/float-review/index"
+  }
+}

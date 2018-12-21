@@ -1,0 +1,4 @@
+<!--components/goTop/index.wxml-->
+<view class='go-top' wx:if="{{isShow}}" bindtap='gotop'>
+  <image src='../../assets/images/icon_gotop.png'></image>
+</view>

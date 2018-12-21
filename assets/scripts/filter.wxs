@@ -1,0 +1,12 @@
+/***
+ * 添加省略号
+ * @param text String 目标文本
+ * @param maxlen NUmber 允许最大长度
+ */
+var ellipsis = function (text,maxlen) {
+  if (text.length > 40)
+    return text.substring(0, 40) + "..."
+  else
+    return text
+}
+module.exports.ellipsis = ellipsis;

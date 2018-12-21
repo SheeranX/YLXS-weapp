@@ -1,0 +1,17 @@
+<!--components/float-review/index.wxml-->
+<view class='review-float'>
+   <view class='like' bindtap='like'>
+      <i-badge count="{{likeCount}}" i-class-alone="no-bg">
+        <view class="like">
+          <i-icon type="like" size="28" color="#fff"/> 
+        </view>
+      </i-badge>
+   </view>
+   <view class='message' style='border-left: 1px solid #e7e7e7;' wx:if="{{isMessage}}" bindtap='message'>
+      <i-badge count="{{messageCount}}" i-class-alone="no-bg">
+        <view class="message">
+          <i-icon type="message" size="28" color="#fff"/> 
+        </view>
+      </i-badge>
+   </view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "order-payment":"../../../components/order-payment/index"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "i-icon": "../../../components/iview/icon/index",
+    "i-cell-group": "../../../components/iview/cell-group/index",
+    "i-cell": "../../../components/iview/cell/index",
+    "i-row": "../../../components/iview/row/index",
+    "i-col": "../../../components/iview/col/index",
+    "i-tabs": "../../../components/iview/tabs/index",
+    "i-tab": "../../../components/iview/tab/index",
+    "modal":"../../../components/modal/index",
+    "modal-detail": "../../../components/modal-detail/index",
+    "comment-list": "../../../components/comments-list/index"
+  }
+}

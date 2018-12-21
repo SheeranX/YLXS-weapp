@@ -1,0 +1,44 @@
+<!--components/box/index.wxml-->
+<!-- 列表项 -->
+  <view class="scroll-view-item">
+      <i-row>
+        <i-col span='10'>
+          <view>
+            <image src='{{item.img}}'></image>
+          </view>
+        </i-col>
+        <i-col span='14'>
+          <view class='flex-column between' style='height:160rpx;'> 
+            <view>
+               <view class='title font28 {{!isDetail?"":"ellipsis"}}'>{{item.title}}</view>
+            </view>
+             <view class="{{isDetail?'':'hidden'}}">
+                 <i-row>
+                  <i-col span="10" wx:if="{{isDis}}">
+                    <text class='font24 disable'>距我{{item.distance}}</text>
+                  </i-col>
+                  <i-col span="8" wx:if="{{isStar}}">
+                      <i-rate 
+                          disabled="true"
+                          value="{{item.star||0}}" size="12" i-class="star-h">
+                      </i-rate>
+                  </i-col>
+                  <i-col span="6" wx:if="{{isStar}}">
+                    <text class='font22 disable'>￥{{item.singlePrice}}/人</text>
+                  </i-col>
+                </i-row>
+             </view>
+             <view>
+                <i-row>
+                  <i-col span='12'>
+                      <text class='font28 danger'>￥</text><text class='font36 danger'> {{item.salePrice}}</text><text class='font28 gray'> 起</text>
+                  </i-col>
+                  <i-col span="12">
+                      <text class='font28 gray font-line'>￥{{item.originPrice}}</text>
+                  </i-col>
+                  </i-row>
+             </view>
+          </view>
+        </i-col>
+      </i-row>
+    </view>

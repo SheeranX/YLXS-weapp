@@ -1,0 +1,10 @@
+<!--components/scroll-view/index.wxml-->
+ <scroll-view
+    scroll-y="{{scroll}}"
+    scroll-x="{{!scroll}}"
+    bindscrolltolower="lower"
+    class='i-class'
+    style="height:{{height}}"
+  >
+    <slot></slot>
+  </scroll-view>

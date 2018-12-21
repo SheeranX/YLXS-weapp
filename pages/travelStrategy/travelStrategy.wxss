@@ -1,0 +1,78 @@
+/* pages/travelStrategy/travelStrategy.wxss */
+page{
+  background: #ecebf4;
+}
+.container{
+  padding: 20rpx;
+}
+.compass-box{
+  width: 100%;
+  height: 250rpx; 
+  position: relative;
+  padding: 0 5rpx;
+}
+.box-content{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+.title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.intr{
+  position: absolute;
+  bottom: 0;
+  padding: 10rpx 20rpx;
+ }
+ .title-left{
+  padding-left: 20rpx;
+ }
+ .attention-box{
+   padding: 30rpx 0 0 0;
+ }
+ .attention-title{
+   padding: 30rpx 0;
+ }
+ .swiper-operate{
+   position: absolute;
+   height: 100rpx;
+   left: 0;
+   right: 0;
+   z-index: 999;
+ }
+ .swiper-operate>view{
+   position: absolute; 
+   top: 50%;
+   transform: translateY(-50%);
+ }
+ .next{
+   right: 0;
+ }
+ .tabs>text{
+   padding: 0 20rpx;
+ }
+  .tabs>text:last-child{
+    border-left: 1rpx solid #ccc;
+  }
+  .article{
+    height: 300rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    position: relative;
+  }
+  .article-title{
+    position: absolute;
+    bottom: 20rpx;
+    padding: 20rpx 50rpx;
+    color: #fff;
+    z-index: 999;
+  }
+  .active{
+    color: #4886f9;
+  }

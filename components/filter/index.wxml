@@ -1,0 +1,24 @@
+<!--components/filter/index.wxml-->
+<modal isShow="{{isShowFilter}}">
+  <view>
+    <slot></slot>
+  <view wx:for="{{data}}" wx:for-item="item" wx:key="level" class='list'>
+      <text class='font24 blod title'>{{item.name}}</text>
+      <checkbox-group>
+        <label class="checkbox {{val.checked?'checked':''}}" wx:for="{{item[content]}}" wx:for-item="val" wx:key="unique" wx:for-index="idx"       bindtap='itemClick' data-id='{{val[key]}}'>
+          <checkbox value="{{val[key]}}" checked="{{val.checked}}" id='{{val[key]}}'/>{{val.text}}
+        </label>
+     </checkbox-group>
+    </view>
+  </view>
+  <view class='btm-bar'>
+    <i-row>
+      <i-col span="10" offset="2">
+        <i-button size='small' inline="{{true}}" i-class='btn' bindtap='reset'>重置</i-button>
+      </i-col>
+       <i-col span="10" offset="2">
+         <i-button size='small' type='primary' inline="{{true}}" i-class="btn" bindtap='finish'>完成</i-button>
+      </i-col> 
+    </i-row>
+  </view>
+</modal>

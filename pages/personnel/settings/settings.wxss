@@ -1,0 +1,25 @@
+/* pages/personnel/settings/settings.wxss */
+.setting-container{
+  background-color: #ebebf6;
+  overflow: hidden;
+}
+.save-setting{
+  width: 600rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  font-size: 32rpx;
+  background-color: #eb536c;
+  border-radius: 40rpx;
+  color: #fff;
+  text-align: center;
+  margin: 50rpx auto;
+}
+.modify-pass{
+  color: #495060;
+  padding: 0 20rpx
+}
+.img-size{
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 50%;
+}

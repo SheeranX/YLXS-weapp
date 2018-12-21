@@ -1,0 +1,84 @@
+/* pages/hotelBooking/order/index.wxss */
+@import '../../../plugins/datepicker/index.wxss';
+page{
+  background: #ecebf4;
+}
+.divider{
+  height: 40rpx!important;
+}
+.total{
+  padding: 5rpx 10rpx;
+  border: 1px solid #ccc;
+  font-size: 22rpx;
+  line-height: 1.6;
+  border-radius: 20rpx;
+}
+.enter-num{
+  border: 1px solid #4886f9;
+}
+.num{
+  width: 80rpx;
+  text-align: center;
+  border-top: 1px solid #4886f9;
+  border-bottom: 1px solid #4886f9;
+  font-size: 28rpx;
+}
+.operate{
+  width:  90rpx;
+  text-align: center;
+  border: 1px solid #4886f9;
+}
+.minus{
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+}
+.plus{
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+.form{
+  background: #efefef;
+  padding: 0 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+.form-group{
+   border-bottom: 1px solid #ccc;
+   height: 80rpx;
+   line-height: 80rpx;
+   align-items: center;
+}
+.form-group:last-child{
+  border-bottom: none;
+}
+.form-group>input{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  width: 100%;
+}
+.form-group>text{
+  width: 150rpx;
+}
+.padding-top{
+  padding-top: 10rpx;
+}
+.btm-bar{
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height:80rpx;
+  align-items: center;
+  background: #fff;
+  /* box-shadow: 0 1px 5px rgba(0, 0, 0, .5); */
+  border-top: 1px solid #e7e7e7;
+}
+.go-pay{
+  width: 250rpx;
+  text-align: center;
+  background: #e9536c;
+  color: #fff;
+  height: 100%;
+  line-height: 2.6;
+}
+

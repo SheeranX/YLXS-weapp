@@ -1,0 +1,69 @@
+/* components/box/index.wxss */
+/* components/scroll-view/index.wxss */
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.between{
+  justify-content: space-around;
+}
+.scroll-view-item{
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.scroll-view-item image{
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 3rpx;
+}
+
+.danger{
+  color: #d53939;
+}
+.gray{
+  color: #959595;
+}
+.font28{
+  font-size: 28rpx;
+}
+.font22{
+  font-size: 22rpx;
+}
+.font24{
+  font-size: 24rpx;
+}
+.font36{
+  font-size: 36rpx;
+}
+.black{
+  color: #000;
+}
+.disable{
+  color: #666;
+}
+.bold{
+  font-weight: 700;
+}
+.font-line{
+  text-decoration: line-through;
+}
+.star-h{
+  height: 60rpx;
+}
+.hidden{
+ display: none;
+}
+.ellipsis{
+   overflow:hidden;
+   text-overflow:ellipsis;
+   white-space:nowrap;
+   position: relative;
+}

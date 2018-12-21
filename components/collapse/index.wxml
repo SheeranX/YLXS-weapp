@@ -1,0 +1,26 @@
+<!--components/collapse/index.wxml-->
+<!-- 折叠组件 -->
+
+<view class='collapse'>
+  <view class='collapse-header' bindtap='collapse' wx:if="{{isTop}}">
+    <view>
+     <slot></slot>
+    </view>
+    <view class='{{isShow?"trans-arrow":""}} arrow'>
+       <i-icon type='unfold' size="24"/>
+    </view>
+  </view>
+  <view class='{{!isShow?"hide":""}}'>
+     <view class='collapse-content'>
+        <slot></slot>
+      </view>
+  </view>
+   <view class='collapse-header' bindtap='collapse' wx:if="{{!isTop}}">
+    <view>
+     <slot></slot>
+    </view>
+    <view class='{{isShow?"trans-arrow":""}} arrow'>
+       <i-icon type='unfold' size="24"/>
+    </view>
+  </view>
+</view>

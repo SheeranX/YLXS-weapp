@@ -1,0 +1,104 @@
+
+<view class='container bg-white'>
+  <!-- <top-bar class="fixed"></top-bar> -->
+  <swiper class='h' indicator-dots='true'>
+     <swiper-item wx:for="{{imgUrls}}" wx:for-item="item" wx:key="image">
+       <image src='{{item}}' class='slide-image'></image>
+     </swiper-item>
+  </swiper>
+  <i-row i-class="border-btm information font28" bindtap="temp">
+    <i-col span="6" offset='2'>
+      <text class='bold'>你好，xxx</text>
+    </i-col>
+    <i-col span="16">
+      <text class='success bold'>7557</text>
+      <text> 积分</text>
+    </i-col>
+  </i-row>
+  <i-grid i-class="clear-border">
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/book_ticket.png" class='img-size'></image>
+      <text class='font28 margin-top24'>门票预定</text>
+    </i-grid-item>
+    <i-grid-item i-class="flex-column r-center clear-border" bindtap="hotelBooking">
+      <image src="../../assets/images/book_hotel.png" class='img-size'></image>
+      <text class='font28 margin-top24'>酒店预定</text>
+    </i-grid-item>
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/route.png" class='img-size'></image>
+      <text class='font28  margin-top24'>精品路线</text>
+    </i-grid-item>
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/bar.png" class='img-size'></image>
+      <text class='font28 margin-top24'>美食酒吧</text>
+    </i-grid-item>
+  </i-grid>
+  <i-grid i-class="clear-border">
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/package.png" class='img-size'></image>
+      <text class='font28 margin-top24'>超值套餐</text>
+    </i-grid-item>
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/nav.png" class='img-size'></image>
+      <text class='font28 margin-top24'>导航导览</text>
+    </i-grid-item>
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/blog.png" class='img-size'></image>
+      <text class='font28  margin-top24'>优秀博文</text>
+    </i-grid-item>
+    <i-grid-item i-class="flex-column r-center clear-border">
+      <image src="../../assets/images/live.png" class='img-size'></image>
+      <text class='font28 margin-top24'>在线直播</text>
+    </i-grid-item>
+  </i-grid>
+  <view class='padding-between banner margin-top30'>
+    <image class='' src='../../assets/images/ad_banner.png'></image>
+  </view>
+   <view class='padding-between notice'>
+      <text class='font28 danger'>今天玉龙雪山由于大风大浪暂时关</text>
+    </view>
+</view>
+<view class='container bg-white margin-top30'>
+  <view class='padding-between'> 
+    <i-row i-class="border-btm information font22">
+      <i-col span="4">
+        <image src='../../assets/images/notice.png' class='notice-img'></image>
+      </i-col>
+      <i-col span="10" i-class="notice-txt-vertical">
+        <text>玉龙雪山索道：</text>
+        <text class='status success bold'> 运行正常</text>
+      </i-col>
+      <i-col span="10" i-class="notice-txt-vertical">
+        <text>大索道今日余票：</text>
+        <text class='ticket-left success bold'> 2843</text>张
+      </i-col>
+    </i-row>
+  </view>
+</view>
+<view class='container bg-white margin-top30'> 
+  <view class='title'>
+    <i-divider  color="#000" lineColor="#000" i-class="bold divider-line" size='14'>猜你喜欢</i-divider>
+  </view>
+ <view class='padding-between'>
+   <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
+    <i-tab key="{{item.key}}" title="{{item.title}}" wx:for="{{tab}}"  wx:for-item="item" wx:key="idx" i-class="tab-space"></i-tab>
+  </i-tabs>
+  <swiper style='height:{{swiperHeight}}' bindchange='swiperChange' current='{{current_swiper}}'>
+     <swiper-item wx:for="{{tab}}" wx:for-item="item" wx:key="swiper">
+       <i-scroll-view>
+         <navigator url='../hotelBooking/bookingDetail/bookingDetail' hover-class="none">
+          <i-box wx:for="{{list}}" wx:for-item="val" wx:key="unique" item="{{val}}" id='swiper' isDetail="{{true}}"></i-box>
+         </navigator>
+       </i-scroll-view>
+     </swiper-item>
+  </swiper>
+ </view>
+</view>
+ <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+ <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>
+ <i-go-top isShow="{{isGoTop}}"></i-go-top>
+ <!-- <modal isShow="{{!isShowModal}}" position="bottom"></modal> -->
+ <!-- <filter isShowFilter="{{!isShowModal}}" bind:finish="finish"  data="{{condition}}" key="sid" content="content" title="name">
+  <top-bar></top-bar>
+ </filter> -->
+ 

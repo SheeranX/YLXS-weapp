@@ -1,0 +1,36 @@
+<!--pages/personnel/personnel.wxml-->
+<view class='personnel-container'>
+<image class='personel-bg' src='../../assets/images/main-bg.png'></image>
+  <view class='icon-group'>
+    <i-icon type="remind" size='26' color='#fff' i-class='mg-right40'/>
+    <i-icon type="setup" size='26' color='#fff' bindtap='settingClick'/>
+  </view>
+  <view class='personnel-card-box'>
+    <view class='personnel-card'>
+      <image class='personnel-avator' src='../../assets/images/icon-avator.png'></image>
+      <view class='font32'>张大大</view>
+      <view class='nickName font28 gray'>zdd12345</view>
+    </view>
+  </view>
+
+  <view>
+    <i-grid i-class="clear-border">
+      <i-grid-item i-class="flex-column r-center clear-border" bindtap="allClick">
+        <image src="../../assets/images/icon-main-all.png" class='img-size'></image>
+        <text class='font28 margin-top24'>全部</text>
+      </i-grid-item>
+      <i-grid-item i-class="flex-column r-center clear-border">
+        <image src="../../assets/images/icon-main-unpaid.png" class='img-size' bindtap='unpayClick'></image>
+        <text class='font28 margin-top24'>待支付</text>
+      </i-grid-item>
+      <i-grid-item i-class="flex-column r-center clear-border">
+        <image src="../../assets/images/icon-main-unused.png" class='img-size'></image>
+        <text class='font28  margin-top24'>待使用</text>
+      </i-grid-item>
+      <i-grid-item i-class="flex-column r-center clear-border" bindtap="uncommnetClick">
+        <image src="../../assets/images/icon-main-uncomm.png" class='img-size'></image>
+        <text class='font28 margin-top24'>待评价</text>
+      </i-grid-item>
+    </i-grid>
+  </view>
+</view>

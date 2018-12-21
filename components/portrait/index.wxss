@@ -1,0 +1,20 @@
+/* components/portrait/index.wxss */
+.font24{
+  font-size: 24rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.font22{
+  font-size: 22rpx;
+}
+.bold{
+  font-weight: 600;
+}
+.img{
+  margin-right: 20rpx;
+}
+.browser{
+ height: 80rpx;
+ line-height: 80rpx;
+}

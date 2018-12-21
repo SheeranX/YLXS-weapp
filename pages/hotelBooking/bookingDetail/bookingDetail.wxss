@@ -1,0 +1,136 @@
+/* pages/hotelBooking/bookingDetail/bookingDetail.wxss */
+
+.bg-color {
+  background-color: #ebebf4;
+}
+
+.hotel-header {
+  height: 330rpx;
+}
+
+.hotel-banner {
+  width: 100%;
+}
+
+.cell-box {
+  border-top: 0.1rpx solid #e9eaec;
+  border-bottom: 0.1rpx solid #e9eaec;
+  padding: 20rpx 0;
+}
+
+.col-class {
+  position: relative;
+}
+
+.cell-box-icon {
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  transform: translateY(-50%);
+}
+
+.redColor {
+  color: #d53939;
+}
+
+.blueColor {
+  color: #699ae0;
+}
+
+.border-bottom {
+  border-bottom: 1rpx solid #e9eaec;
+}
+
+.border-right {
+  border-right: 1rpx solid #e9eaec;
+}
+
+.hotel-body {
+  margin-bottom: 20rpx;
+}
+
+.hotel-tab {
+  width: 50%;
+  margin: 0 20rpx;
+  font-size: 36rpx;
+}
+
+.list-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.margin-left-20 {
+  margin-left: 20rpx;
+}
+
+.margin-right-20 {
+  margin-right: 20rpx;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10rpx;
+}
+
+.padding-20 {
+  padding: 20rpx;
+}
+
+.list-item {
+  border-bottom: 1rpx solid #e9eaec;
+  padding: 20rpx 30rpx;
+  position: relative;
+}
+
+.list-item-title {
+  margin-right: 30rpx;
+}
+
+.list-item-icon {
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  transform: translateY(-50%);
+}
+
+.list-item-isRoomful {
+  position: absolute;
+  top: 50%;
+  right: 80rpx;
+  transform: translateY(-50%);
+}
+
+.bg-gray {
+  background-color: #ebebf4;
+}
+
+.list-item-button {
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  transform: translateY(-50%);
+  color: #fff;
+  background-color: #e9536c;
+  text-align: center;
+}
+
+.list-item-right-price {
+  position: absolute;
+  top: 50%;
+  right: 200rpx;
+  transform: translateY(-50%);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.modal {
+  overflow-y: auto;
+}
+

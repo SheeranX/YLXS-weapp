@@ -1,0 +1,51 @@
+/* pages/personnel/myOrder/myOrder.wxss */
+.tabs{
+  padding-bottom: 30rpx;
+}
+.myOrder-container {
+  background-color: #ededf6;
+}
+
+.list-container {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.list-container:last-child {
+  margin-top: 0rpx;
+}
+
+.myOrder-mark {
+  width: 140rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  background-color: #4b88fb;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfloat {
+  clear: both;
+}
+
+.mg-right20 {
+  margin-right: 20rpx;
+}
+
+.bg-red {
+  background-color: #eb536c;
+}
+
+.order-list {
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.list-item {
+  margin: 20rpx 0;
+}

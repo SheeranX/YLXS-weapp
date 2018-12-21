@@ -1,0 +1,26 @@
+<!--pages/intoLijiang/review/index.wxml-->
+<i-scroll-view height="{{contentHeight}}" bind:lower="lower">
+  <view class='container bg-white' wx:for="{{list}}" wx:for-item="item" wx:key="unique" wx:for-index="idx" bindtap='reply' data-idx="{{idx}}">
+    <i-portrait src="{{item.url}}" title="{{item.title}}" time="{{item.time}}"></i-portrait>
+    <view class='content'>
+      <text class='font24'>{{item.text}}</text>
+    </view>
+  </view>
+   <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+   <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>
+</i-scroll-view>
+<view>
+  <i-button i-class="txt-r" bindtap='chat'>聊聊吧</i-button>
+</view>
+ <modal isShow="{{isShowModal}}" position="bottom" isBg="{{isBg}}">
+  <view class='textarea-h padding-between gray' wx:if="{{isShowModal}}">
+     <view class='re-title'>
+       <text class='font28' wx:if="{{!isReply}}">评论</text>
+       <text class='font28' wx:else>正在回复{{replyWho}}：</text>
+     </view>
+     <textarea  auto-height focus="{{true}}" class='font28 txt-area' maxlength='{{140}}' placeholder="(字数限制140字)" cursor-spacing="5px"/>
+  </view>
+  <view class='txt-right padding-between'>
+    <text class='info font28'>发送</text>
+  </view>
+ </modal>

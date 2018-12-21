@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-card": "../../components/iview/card/index",
+    "i-radio-group": "../../../components/iview/radio-group/index",
+    "i-radio": "../../components/iview/radio/index",
+    "i-icon": "../../components/iview/icon/index",
+    "i-panel": "../../components/iview/panel/index",
+    "i-button": "../../components/iview/button/index",
+    "i-row": "../../components/iview/row/index",
+    "i-col": "../../components/iview/col/index"
+  }
+}

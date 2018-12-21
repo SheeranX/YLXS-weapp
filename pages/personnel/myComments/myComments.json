@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-rate": "../../../components/iview/rate/index",
+    "i-icon": "../../../components/iview/icon/index"
+  }
+}

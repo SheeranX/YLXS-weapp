@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-portrait": "../../../components/portrait/index",
+    "i-scroll-view": "../../../components/scroll-view/index",
+    "i-button": "../../../components/iview/button/index",
+    "i-divider": "../../../components/iview/divider/index",
+    "i-load-more": "../../../components/iview/load-more/index",
+    "i-input": "../../../components/iview/input/index",
+    "modal": "../../../components/modal/index"
+  }
+}

@@ -1,0 +1,6 @@
+<!--components/modal/index.wxml-->
+<view class='i-modal {{isBg?"":"bg-hide"}}' catchtouchmove="preventD" bindtap='close' wx:if="{{isShow}}">
+</view>
+<view class='i-modal-content {{isShow?"slide-down":""}} i-modal-content-{{position}}' style=' max-height:{{height}};min-height:{{minHeight}}'>
+    <slot></slot>
+</view>

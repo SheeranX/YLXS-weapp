@@ -1,0 +1,45 @@
+<!--pages/travelStrategy/detail/index.wxml-->
+<view class='container bg-white'>
+  <view class='padding-between'>
+    <text class='font32 bold'> 拉萨市一日游</text>
+  </view>
+  <i-portrait src="https://bulma.io/images/placeholders/128x128.png" title="施瓦辛格" time="2013-07-23 16:00:00"></i-portrait>
+  <view class='tags padding-between flex-row gray'>
+    <view>
+      <i-icon type='label'/>
+      <text class='font20'> 穷游</text>
+    </view>
+     <view>
+      <i-icon type='label'/>
+      <text class='font20'> 美食</text>
+    </view>
+     <view>
+      <i-icon type='label'/>
+      <text class='font20'> 购物</text>
+    </view>
+  </view>
+  <view class='padding-between font24 flex-row status'>
+    <view>
+      <text class='bold'>123</text>
+      <text> 喜欢</text>
+    </view>
+    <view>·</view>
+    <view>
+      <text class='bold'>458</text>
+      <text> 评论</text>
+    </view>
+     <view>·</view>
+    <view>
+      <text class='bold'>911</text>
+      <text> 浏览</text>
+    </view>
+  </view>
+</view>
+<view class='container padding-between'>
+<i-divider content=""  lineColor="#eee"></i-divider>
+  <view>
+    <text>富文本上传内容</text>
+  </view> 
+</view>
+<i-go-top isShow="{{isGoTop}}"></i-go-top>
+<i-float-review isMessage="{{true}}" likeCount="100" messageCount="10" bind:like="like" bind:message="message"></i-float-review>

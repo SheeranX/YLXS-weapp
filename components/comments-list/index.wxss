@@ -1,0 +1,100 @@
+/* pages/hotelBooking/bookingComments/bookingComments.wxss */
+
+.font28 {
+  font-size: 28rpx;
+}
+
+.font32 {
+  font-size: 32rpx;
+}
+
+.font36 {
+  font-size: 36rpx;
+}
+
+.font38 {
+  font-size: 38rpx;
+}
+
+.bg-color {
+  background-color: #ebebf4;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.margin-20 {
+  margin: 20rpx 0;
+}
+
+.margin-left-10 {
+  margin-left: 10rpx;
+}
+
+.orangeColor {
+  color: #ff7e36;
+}
+
+.gray {
+  color: #666;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.comment-grade-container {
+  margin: 15rpx 0;
+  background-color: #fff;
+}
+
+.grade-box {
+  padding: 20rpx 30rpx;
+}
+
+.comment-grade {
+  line-height: 170rpx;
+  text-align: center;
+}
+
+.comment-list {
+  padding: 0 20rpx;
+}
+
+.comment-list-item {
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+
+.list-item-head {
+  position: relative;
+}
+
+.list-item-head .typeInfo {
+  position: absolute;
+  right: 40rpx;
+}
+
+.list-item-content {
+  padding: 20rpx 0;
+}
+
+.list-item-footer {
+  position: relative;
+}
+
+.list-item-footer .likeBtn {
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+  width: 160rpx;
+  height: 40rpx;
+  padding: 5rpx;
+  color: #a9a9a9;
+  border: 1rpx solid #a9a9a9;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
