@@ -1,0 +1,4 @@
+/* pages/ticketBooking/bookingComments/index.wxss */
+page{
+  background-color: #ebebf6;
+}

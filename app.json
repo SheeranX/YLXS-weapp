@@ -19,7 +19,17 @@
     "pages/pay/index",
     "pages/personnel/commentDetail/commentDetail",
     "pages/personnel/myComments/myComments",
-    "pages/personnel/settings/settings"
+    "pages/personnel/settings/settings",
+    "pages/pay/payStatus/payStatus",
+    "pages/hotelBooking/addPerson/index",
+    "pages/ticketBooking/index",
+    "pages/ticketBooking/bookingDetail/index",
+    "pages/ticketBooking/bookingComments/index",
+    "pages/travelStrategy/writeArticle/index",
+    "pages/ticketBooking/order/index",
+    "pages/ticketBooking/addPerson/index",
+    "pages/ticketBooking/bookingOrderPay/index",
+    "pages/hotelBooking/bookingIntroduce/bookingIntroduce"
   ],
   "usingComponents": {
     "i-toast": "/components/iview/toast/index",
@@ -27,9 +37,9 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#4886f9",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "borderStyle": "black",

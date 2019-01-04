@@ -1,0 +1,92 @@
+<!--pages/ticketBooking/bookingDetail/index.wxml-->
+<view class='container bg-gray'>
+  <view class='hotel-header'>
+    <image class='hotel-banner' src='../../../assets/images/hotel.jpg'></image>
+  </view>
+  <view class='hotel-body'>
+    <i-cell-group>
+      <i-cell title="优山美地国家森林公园"></i-cell>
+      <i-cell title="国家AAAAA级旅游景区" url="/pages/dashboard/index"   >
+        <i-icon type="integral" slot="icon" size="20" color="#4886f9" />
+         <i-icon type="enter" slot="footer" size="16" color='#666' />
+      </i-cell>
+      <i-cell title="丽江市玉龙县丽江古城以北15公里处"  url="/pages/dashboard/index">
+        <i-icon type="coordinates_fill" slot="icon" size="20" color="#4886f9" />
+         <i-icon type="enter" slot="footer" size="16" color='#666' />
+      </i-cell>
+    </i-cell-group>
+    <i-row i-class="cell-box bg-white">
+      <i-col span="12" i-class="col-class">
+        <view class='border-right txt-center  flex-column f-center r-center' bindtap='productClick'>
+          <view class='font32'>景点介绍</view>
+          <text class='gray font24'>开放时间/优惠政策</text>
+        </view>
+        <i-icon class="cell-box-icon" size='16' type="enter" color='#495060'/>
+      </i-col>
+      <i-col span="12" i-class="col-class">
+        <view class='txt-center redColor  flex-column f-center r-center' bindtap='commentClick'>
+          <view>
+            <text class='font36'>96.6%</text>
+            <text class='font32'>好评率</text>
+          </view>
+          <text class='font24'>来自1502位游客点评</text>
+        </view>
+        <i-icon class="cell-box-icon" size='16' type="enter" />
+      </i-col>
+    </i-row>
+  </view>
+  <view class='hotel-list bg-white'>
+    <i-tabs current="{{ current }}" color="#699ae0" bindchange="handleChange">
+      <i-tab class="hotel-tab" key="productList" title="产品列表"></i-tab>
+      <i-tab class="hotel-tab" key="bookingInfo" title="套餐列表"></i-tab>
+    </i-tabs>
+    <view wx:if="{{current == 'productList'}}">
+      <view class='list-container' wx:for="{{list}}" wx:key="item" wx:for-item="item">
+        <view class='list-item'>
+          <view class='item-left flex-row s-between'>
+            <view class='flex-column s-between'>
+              <text class='font28'>{{item.title}}</text>
+              <view class='font24'>
+                <text class='info'>22:00前可订明日</text>
+                <text class='remind' bindtap='showReminder'>预定须知></text>
+              </view>
+            </view>
+            <view class='flex-column s-between'>
+              <text class='font28 danger txt-center'>￥{{item.price}}</text>
+              <navigator url='../order/index' hover-class='none'>
+                <button class='btn btn-small btn-danger'>预订</button>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+       <view class='list-container' wx:for="{{list}}" wx:key="item" wx:for-item="item">
+        <view class='list-item'>
+          <view class='item-left flex-row s-between'>
+            <view class='flex-column s-between'>
+              <text class='font28'>玉龙雪山门票</text>
+              <view class='font24'>
+                <text class='info'>22:00前可订明日</text>
+                <text class='remind'>预定须知></text>
+              </view>
+            </view>
+            <view class='flex-column s-between'>
+              <text class='font28 danger'>￥567</text>
+              <button class='btn btn-small btn-danger'>预订</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<modal isShow="{{isShowReminder}}" position="bottom">
+  <text>我是预定须知</text>
+</modal>
+ <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+ <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>
+ <i-go-top isShow="{{isGoTop}}"></i-go-top>
+<!-- <production-list></production-list> -->

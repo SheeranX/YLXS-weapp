@@ -1,0 +1,19 @@
+<!--pages/pay/payStatus/payStatus.wxml-->
+<view class='pay-container'>
+  <view class='pay-box'>
+    <view class='payInfo flex-column'>
+      <view>
+        <i-icon type="{{payStatus == 0 ? 'success_fill' : 'delete_fill'}}" color="{{payStatus == 0 ? '#00963d' : '#e7536c'}}" size='90' />
+      </view>
+      <view class='payStatus font36'>{{payStatus == 0 ? '支付成功':'支付失败'}}</view>
+      <view class='font32 grayColor'>在线支付：
+        <text class='redColor font36'>￥240</text>
+      </view>
+    </view>
+    <view class='ovalBtnGroup flex-row font28'>
+      <view class='ovalBtn' bindtap='backToIndex'>返回首页</view>
+      <view class='ovalBtn' bindtap='checkOrder'>查看订单</view>
+    </view>
+  </view>
+
+</view>

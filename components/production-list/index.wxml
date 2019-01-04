@@ -1,0 +1,21 @@
+<!--components/production-list/index.wxml-->
+<view class='row-container' wx:for="{{list}}" wx:for-item="item" wx:key="item">
+  <i-row>
+    <i-col span="18">
+      <view class='row-left-box'>
+        <view class='item-title font28'>{{item.title}}</view>
+        <view class='font26'>
+          <text class='mg-right20 blueColor'>今日剩余{{item.remain}}份</text>
+          <text class='mg-right20 grayColor'>|</text>
+          <text class='grayColor'>预订须知 ></text>
+        </view>
+      </view>
+    </i-col>
+    <i-col span="6">
+    <view class='row-right-box'>
+     <view class='item-price redColor font36'>￥{{item.price}}</view>
+      <view class='bookBtn'>预定</view>
+    </view>
+    </i-col>
+  </i-row>
+</view>

@@ -1,0 +1,9 @@
+<!--components/navbar/index.wxml-->
+<view class='navbar'>
+   <view>
+      <i-icon type="return" size='24'/>
+   </view>
+   <view class='title'>
+      <text>{{title}}</text>
+   </view>
+</view>

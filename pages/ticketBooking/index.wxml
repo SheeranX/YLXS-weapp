@@ -1,0 +1,13 @@
+<!--pages/ticketBooking/index.wxml-->
+<view class='container bg-white'>
+ <top-bar bind:filter="filter"></top-bar>
+ <filter isShowFilter="{{!isShowModal}}" bind:finish="finish" data="{{condition}}" key="sid" content="content" title="name">
+    <top-bar></top-bar>
+</filter>
+<view class='list padding-between'>
+    <i-box wx:for="{{list}}" wx:for-item="val" wx:key="unique" item="{{val}}" id='swiper' isDetail="{{true}}" isStar="{{false}}" bindtap='goDetail'></i-box>
+</view>
+</view>
+ <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+ <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>
+ <i-go-top isShow="{{isGoTop}}"></i-go-top>

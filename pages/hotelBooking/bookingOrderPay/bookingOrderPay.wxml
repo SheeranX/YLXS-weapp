@@ -1,3 +1,71 @@
-<view>
-  <order-payment></order-payment>
+<!--订单支付-->
+<view class='order-container'>
+  <view class='order-box bg-white'>
+    <view class='order-title font36'>丽江金茂凯悦甄选酒店</view>
+    <view class='order-tips font28'>
+      <text>豪华套房（今日特价）</text>
+      <text>无早</text>
+      <text>双床</text>
+      <text>有窗</text>
+      <text>不可退改</text>
+    </view>
+    <view class='order-dataTime font32'>
+      <view>
+        <text class='mg-right-10'>09月29日</text>
+        <text class='font28 grayColor'>入住</text>
+      </view>
+      <view>
+        <text class='mg-right-10'>09月30日</text>
+        <text class="font28 grayColor">离店</text>
+      </view>
+      <view>
+        <text>1晚</text>
+      </view>
+      <view>
+        <text>1间</text>
+      </view>
+    </view>
+    <view class='order-card font24' wx:if="{{isShow}}">
+      <i-row i-class="order-traff-row ">
+        <i-col span="8" i-class="col-class txt-align-right">
+          <view class='padding-10'>费用明细：</view>
+        </i-col>
+        <i-col span="16" i-class="col-class" >
+          <view class='padding-10'>
+            <text>基本团费</text>
+            <text class='float-right'>￥240</text>
+          </view>
+          <view class='padding-10'>
+            <text>保险</text>
+            <text class='float-right'>￥240</text>
+          </view>
+        </i-col>
+      </i-row>
+      <i-row i-class="order-traff-row">
+        <i-col span="8" i-class="col-class txt-align-right">
+          <view class='padding-10'>出行人：</view>
+        </i-col>
+        <i-col span="16" i-class="col-class">
+          <view class='order-traff-personInfo'>
+            <view>张大大</view>
+            <view class='font28 grayColor'>身份证 371000000000000000</view>
+            <view class='font28 grayColor'>手机号 1333333333</view>
+          </view>
+        </i-col>
+      </i-row>
+
+    </view>
+    <view class='order-price font32' bindtap='collapse'>在线支付：
+      <text class="redColor">￥240</text>
+      <i-icon type="{{isShow ? 'packup' : 'unfold'}}" size='20' class='order-price-icon' color="#3879d6" />
+    </view>
+  </view>
 </view>
+<i-panel i-class="panel-container">
+  <i-radio-group  i-class="radioGroup" current="{{current}}" bindchange="handleChange">
+    <i-radio color="#e9536c" wx:for="{{list}}" position="{{position}}" wx:key="{{item.id}}"  value="{{item.name}}" i-class='payRadio'>
+      <image class='img-size' src='{{item.img}}' slot="icon" style="height:{{item.id == 3 ? '40rpx' : ''}}"></image>
+    </i-radio>
+  </i-radio-group> 
+</i-panel>
+<view class='payBtn font32' bindtap='confirmPay'>确认支付</view>

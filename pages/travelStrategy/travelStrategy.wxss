@@ -38,6 +38,9 @@ page{
  }
  .attention-title{
    padding: 30rpx 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
  .swiper-operate{
    position: absolute;

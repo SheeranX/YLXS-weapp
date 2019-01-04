@@ -5,6 +5,9 @@
     "i-col": "../../../components/iview/col/index",
     "i-divider": "../../../components/iview/divider/index",
     "i-input-number":"../../../components/iview/input-number/index",
-    "modal":"../../../components/modal/index"
+    "i-tag":"../../../components/iview/tag/index",
+    "i-button":"../../../components/iview/button/index",
+    "modal":"../../../components/modal/index",
+    "input-num": "../../../components/inputNum/index"
   }
 }

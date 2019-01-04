@@ -1,0 +1,23 @@
+/* components/navbar/index.wxss */
+.navbar{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx 0 0 10rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+  background: #fff;
+}
+.navbar>view{
+  flex-flow: 1;
+}
+.title{
+  font-size: 28rpx;
+  text-align: center;
+  width: 80%;
+  flex-flow: 1;
+}

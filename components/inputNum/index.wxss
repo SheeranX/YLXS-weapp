@@ -1,0 +1,30 @@
+/* components/inputNum/index.wxss */
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.enter-num{
+  border: 1px solid #4886f9;
+}
+.num{
+  width: 80rpx;
+  text-align: center;
+  border-top: 1px solid #4886f9;
+  border-bottom: 1px solid #4886f9;
+  font-size: 28rpx;
+}
+.operate{
+  width:  90rpx;
+  text-align: center;
+  border: 1px solid #4886f9;
+  height: 1.4rem;
+}
+.minus{
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+}
+.plus{
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}

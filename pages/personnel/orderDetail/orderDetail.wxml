@@ -3,13 +3,13 @@
   <view class='orderDetail-box'>
     <view class='orderDetail-box-header font32'>
       <view>
-        <text class='blueColor'>冰川公园大索道</text>
-        <text class="greenColor float-right">待使用</text>
+        <text class='blueColor'>{{ticketName}}</text>
+        <text class="greenColor float-right">{{useStatus}}</text>
         <view class='clearfloat'></view>
       </view>
       <view class='mg-top20'>
-        <text>索道成人票</text>
-        <text class="redColor float-right">￥2100</text>
+        <text>{{ticketType}}</text>
+        <text class="redColor float-right">￥{{ticketPrice}}</text>
         <view class='clearfloat'></view>
       </view>
     </view>
@@ -18,49 +18,49 @@
         <view class="order-label txt-right">
           <label>订单号：</label>
         </view>
-        <text>564189222483467</text>
+        <text>{{ticketList.orderNo}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>单价：</label>
         </view>
-        <text>￥245</text>
+        <text>￥{{ticketList.singlePrice}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>有效期：</label>
         </view>
-        <text>2018-07-10 至 2019-10-15</text>
+        <text>{{ticketList.startTime}} 至 {{ticketList.endTime}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>购票数量：</label>
         </view>
-        <text>2</text>
+        <text>{{ticketList.ticketNum}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>退票数量：</label>
         </view>
-        <text>0</text>
+        <text>{{ticketList.numOfRefund}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>退款金额：</label>
         </view>
-        <text>￥0</text>
+        <text>￥{{ticketList.refundAmount}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>取票数量：</label>
         </view>
-        <text>0</text>
+        <text>{{ticketList.getTicketNum}}</text>
       </view>
       <view class='flex-row mg-top20'>
         <view class="order-label txt-right">
           <label>检票数量：</label>
         </view>
-        <text>0</text>
+        <text>{{ticketList.checkTicketNum}}</text>
       </view>
     </view>
     <view class='orderDetail-footer'>
@@ -79,25 +79,25 @@
         <view class="order-label txt-right">
           <label>支付状态：</label>
         </view>
-        <text>已支付</text>
+        <text>{{payInfo.payStatus}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>支付方式：</label>
         </view>
-        <text>微信支付</text>
+        <text>{{payInfo.payMode}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>支付时间：</label>
         </view>
-        <text>2018-10-15 16:00:00</text>
+        <text>{{payInfo.payTime}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>支付金额：</label>
         </view>
-        <text>￥245.00</text>
+        <text>￥{{payInfo.payMoney}}</text>
       </view>
     </view>
   </view>
@@ -109,43 +109,43 @@
         <view class="order-label txt-right">
           <label>取票人姓名：</label>
         </view>
-        <text>张大大</text>
+        <text>{{getTicket.name}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>身份证号码：</label>
         </view>
-        <text>348524486415786141548</text>
+        <text>{{getTicket.IDcardNum}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>手机号码：</label>
         </view>
-        <text>13256874155</text>
+        <text>{{getTicket.phone}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>取票状态：</label>
         </view>
-        <text>已取票</text>
+        <text>{{getTicket.getTicketStatus}}</text>
       </view>
       <view class='flex-row mg-top20 font28'>
         <view class="order-label txt-right">
           <label>取票时间：</label>
         </view>
-        <text>2018-12-15 18:45:12</text>
+        <text>{{getTicket.getTicketTime}}</text>
       </view>
     </view>
   </view>
   <view class='orderDeatain-info order-remark'>
     <view class='orderDetail-title font32'>备注</view>
     <view class='orderDetail-content'>
-      <text class='font28'>人生若只如初见，何事秋风悲画扇。等闲变却故人心，却道故人心已变。</text>
+      <text class='font28'>{{remark}}</text>
     </view>
   </view>
 </view>
 <view class='fixedBtn'>
   <view class='orderBtn'>退订</view>
   <view class='orderBtn'>取消订单</view>
-  <view class='orderBtn payBtn'>立即支付</view>
+  <view class='orderBtn payBtn' bindtap='goToPay'>立即支付</view>
 </view>

@@ -1,0 +1,17 @@
+<!--pages/pay/paySuccess/paySuccess.wxml-->
+<view class='pay-container'>
+  <view class='pay-box'>
+    <view class='payInfo txt-center'>
+      <i-icon type="success_fill" color='#00963d' size='90' />
+      <view class='payStatus font36'>支付成功</view>
+      <view class='font32 grayColor'>在线支付：
+        <text class='redColor font36'>￥240</text>
+      </view>
+    </view>
+    <view class='ovalBtnGroup flex-row font28'>
+      <view class='ovalBtn' bindtap='backToIndex'>返回首页</view>
+      <view class='ovalBtn' bindtap='checkOrder'>查看订单</view>
+    </view>
+  </view>
+
+</view>

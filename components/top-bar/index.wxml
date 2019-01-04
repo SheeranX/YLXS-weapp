@@ -11,7 +11,7 @@
         <i-col span="6">
            <text class='font24'>评分</text>
         </i-col>
-        <i-col span="6">
+        <i-col span="6"  bindtap='filterate'>
            <text class='font24'>筛选</text>
            <image class='filter' src='../../assets/images/icon-filter.png'></image>
         </i-col>

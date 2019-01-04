@@ -1,7 +1,8 @@
 /***
  * 添加省略号
- * @param text String 目标文本
- * @param maxlen NUmber 允许最大长度
+ * @param {string}-text String 目标文本
+ * @param {string}-maxlen NUmber 允许最大长度
+ * @return {string} - text 经过省略处理的文本
  */
 var ellipsis = function (text,maxlen) {
   if (text.length > 40)
@@ -9,4 +10,19 @@ var ellipsis = function (text,maxlen) {
   else
     return text
 }
-module.exports.ellipsis = ellipsis;
+
+var moredate = function(date){
+  debugger
+   if(typeof date!='string')
+    return ""
+  else
+  {
+     var d = date.split('-');
+     console.log(date);
+     return 'asdfasdf'
+  }
+}
+module.exports  = {
+  ellipsis: ellipsis,
+  moredate: moredate
+};

@@ -1,10 +1,11 @@
 /* pages/personnel/myComments/myComments.wxss */
+page{
+  background-color: #ededf6;
+}
 .redColor{
   color: #eb536c;
 }
-.myComments-container{
-  background-color: #ededf6;
-}
+
 .myComments-card:first-child{
   border-top: 1rpx solid #eee;
 }

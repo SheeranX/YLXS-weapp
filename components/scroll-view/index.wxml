@@ -3,8 +3,8 @@
     scroll-y="{{scroll}}"
     scroll-x="{{!scroll}}"
     bindscrolltolower="lower"
-    class='i-class'
-    style="height:{{height}}"
+    class='i-class scroll-view-item'
+    style="height:{{height}}rpx"
   >
     <slot></slot>
   </scroll-view>

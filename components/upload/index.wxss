@@ -1,0 +1,28 @@
+/* components/upload/index.wxss */
+.upload-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.box-item{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  margin: 5rpx;
+}
+.upload{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-size{
+  width: 100%;
+  height: 100%;
+}

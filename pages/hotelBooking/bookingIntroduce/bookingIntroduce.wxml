@@ -1,0 +1,13 @@
+<!--pages/hotelBooking/bookingIntroduce/bookingIntroduce.wxml-->
+<view>
+<i-tabs i-class="font32" current="{{ currentTab }}" color="#699ae0" bindchange="handleTabChange">
+    <i-tab class="hotel-tab" key="scenicIntro" title="酒店介绍"></i-tab>
+    <i-tab class="hotel-tab" key="bookInfo" title="预定须知"></i-tab>
+  </i-tabs>
+  <view wx:if="{{currentTab == 'scenicIntro'}}">
+    这里酒店介绍页面
+  </view>
+  <view wx:else>
+    预定须知
+  </view>
+</view>

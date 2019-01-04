@@ -72,6 +72,7 @@ const conf = {
 		}
 	},
 	calculateDays(year, month, curDate) {
+    debugger
 		let days = [];
 		let day;
 		let selectMonth;
@@ -83,16 +84,24 @@ const conf = {
 			selectMonth = selectedDay[ 0 ].month;
 			selectYear = selectedDay[ 0 ].year;
 		}
+  
 		for (let i = 1; i <= thisMonthDays; i++) {
 			days.push({
 				day: i,
 				choosed: curDate ? (i === curDate) : (year === selectYear && month === selectMonth && i === day),
 				year,
 				month,
+        price:10,
+        left:12,
+        text:''
+       // index:i
 			});
 		}
+    let tempDur = this.data.datepicker['durationDate']||[];
 		const tmp = {
 			'datepicker.days': days,
+      'datepicker.durationDate': tempDur.length > 0 ? tempDur : days.filter(item=>item.choosed),
+      'datepicker.endPicked':false
 		};
 		if (curDate) {
 			tmp[ 'datepicker.selectedDay' ] = [ {
@@ -100,6 +109,7 @@ const conf = {
 				choosed: true,
 				year,
 				month,
+        text:''
 			} ];
 		}
 		this.setData(tmp);
@@ -211,33 +221,103 @@ const conf = {
 		const { curYear, curMonth, days } = this.data.datepicker;
 		const key = `datepicker.days[${idx}].choosed`;
 		const selectedValue = `${curYear}-${curMonth}-${days[ idx ].day}`;
-   // const chooseDay = `${days[idx].day}`;
-    let durationArr = [];
-		if (this.config.type === 'timearea') {
-			this.setData({
-				[ key ]: !days[ idx ].choosed,
-			});
-      const selected = days.filter(item => item.choosed);
-
+    const selectVal = `${curMonth}-${days[idx].day}`;
+    let endPick = this.data.datepicker['endPicked'];
+    let durationDate = this.data.datepicker['durationDate'];
+    //days[idx].index = idx; //当前日期所在日历的序号
+    if (this.config.type === 'timearea' && !days[idx].choosed) {
+        days[idx].choosed = true;//点击选择的日期
+        let dTemp = this.convertToNum(days[idx]) - this.convertToNum(durationDate[0]); //计算日期间隔
+        if (durationDate.length == 2) {
+          durationDate = [];
+          days.map((item,i)=>{
+            item.text = "";
+            i == idx ? item.choosed = true : item.choosed = false;
+          })
+          days[idx].text = "住";
+          durationDate[0] = days[idx];
+        } 
+        else
+        {
+          if (dTemp > 0) {
+            const ms = 1000 * 1 * 60 * 60 * 24;
+            const temp = dTemp / ms;//间隔天数   
+            durationDate[1] = days[idx];
+            // if(durationDate[1].month==durationDate[0].month)
+            days.map((item, i) => {
+              i == durationDate[1].day - 1 || i == durationDate[0].day - 1 ? item.choosed = true : item.choosed = false;
+            });
+            days[idx].text = "离";
+          }
+          else
+          {
+            wx.showToast({
+              title: '离店日期大于入住日期',
+              icon:'none'
+            });
+            days[idx].choosed = false;
+          }
+          // else {
+          //   durationDate[0] = days[idx];
+            
+          //   if (durationDate[1].month == durationDate[0].month)
+          //     days.map((item, i) => {
+          //       i == durationDate[1].day - 1 || i == durationDate[0].day - 1 ? item.choosed = true : item.choosed = false;
+          //     });
+          // }                             
+        }
+		  	this.setData({
+          [key]: days[idx].day,
+          'datepicker.durationDate': durationDate,
+          'datepicker.days': days
+		  	});
 		}
      else if (this.config.type === 'normal' && !days[ idx ].choosed) {
       const selected = days.filter(item => item.choosed);
       const prev = selected[ 0 ];//获取前一个选择obj
 			const prevKey = prev && `datepicker.days[${prev.day - 1}].choosed`;//获取前一个选择key
-
+      let durationDate = this.data.datepicker['durationDate'];
+      //订单界面日期选择
+      let cardList = this.data.cardList;
+      const cardListKey = `cardList[${cardList.length-1}]`;
+      let more = {
+        date: selectVal,
+        price: 92,
+        left: 4,
+        choosed:true
+      }
 			this.setData({
 				[ prevKey ]: false,
 				[ key ]: true,//设置当前选择为true
 				'datepicker.selectedValue': selectedValue,
         'datepicker.selectedDay': [days[idx]],//days[ idx ] 当前天
+        'datepicker.selectVal': selectVal,
+        [cardListKey]: more
 			});
 		}
 	},
   /**
    * 时间格式转时间戳
    */
-  convertToNum(){
+  convertToNum(obj){
+    let year = obj.year;
+    let month = obj.month;
+    let day = obj.day;
+    
+    return new Date(`${year}-${month}-${day}`).getTime();
+  },
+    /**
+   * 时间格式转时间戳
+   */
+  convertToTime(time){
+    const t = new Date(time);
 
+    return {
+      year:t.getFullYear(),
+      month:t.getMonth()+1,
+      day:t.getDate(),
+      choosed:true
+    }
   },
 	/**
 	 * 关闭日历选择器
@@ -268,9 +348,9 @@ const conf = {
 };
 
 function _getCurrentPage() {
-	const pages = getCurrentPages();
-	const last = pages.length - 1;
-	return pages[ last ];
+  const pages = getCurrentPages();
+  const last = pages.length - 1;
+  return pages[last];
 }
 
 export default (config = {}) => {
@@ -282,6 +362,7 @@ export default (config = {}) => {
 			showDatePicker: false,
 			showInput: (config.showInput === true || config.showInput === undefined),
 			placeholder: config.placeholder || '请选择日期',
+     // durationDate:[]
 		}
 	});
 	self.touchstart = conf.touchstart.bind(self);
@@ -291,6 +372,9 @@ export default (config = {}) => {
 	self.closeDatePicker = conf.closeDatePicker.bind(self);
 	self.tapDayItem = conf.tapDayItem.bind(self);
 	self.handleCalendar = conf.handleCalendar.bind(self);
+
+  self.convertToNum = conf.convertToNum.bind(self);
+  self.convertToTime = conf.convertToTime.bind(self);
 };
 
 /**

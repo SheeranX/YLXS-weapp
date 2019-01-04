@@ -1,5 +1,6 @@
 {
   "usingComponents":{
+    "evaluation": "../../../components/evaluation/index",
     "comment-list": "../../../components/comments-list/index"
   }
 }

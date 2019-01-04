@@ -1,0 +1,34 @@
+/* pages/travelStrategy/writeArticle/index.wxss */
+.container{
+  padding-bottom: 100rpx;
+}
+.img-album{
+  width: 100%;
+  height: 400rpx;
+  border: 1px solid #ccc;
+}
+.input-title{
+  font-size: 28rpx;
+  margin:20rpx 0 10rpx 0;
+  height: 200rpx;
+  width: 100%;
+  padding: 10rpx 0 0 10rpx;
+  border: 1px solid #ccc;
+  line-height: 0;
+  box-sizing: border-box;
+}
+.btn-tiny{
+  height:30px!important;
+  line-height:30px!important;
+}
+.content{
+  height: 400rpx;
+}
+.btm-bar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+  box-shadow: 0 -1px 5px rgba(0, 0,0, .3);
+}

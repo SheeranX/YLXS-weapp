@@ -6,10 +6,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    value:0,
+    value:1,
     isShowModal:false,
     duration:1,
-
+    contract:[],
+    tourist:[
+      {
+        id:1001,
+        name:'sheeran',
+        card:'3343232333233234342',
+        imageUrl:'https://bulma.io/images/placeholders/128x128.png'
+      },
+      {
+        id: 1002,
+        name: 'sheeran',
+        card: '3343232333233234342',
+        imageUrl: 'https://bulma.io/images/placeholders/128x128.png'
+      }
+    ]
   },
 
   /**
@@ -35,6 +49,8 @@ Page({
       // placeholder: '请选择日期', // input 输入框
       type: 'timearea', // [normal 普通单选模式(默认), timearea 时间段选择模式(待开发), multiSelect 多选模式(待完善)]
     });
+
+    console.log(this.data.contract);
   },
 
   /**
@@ -91,6 +107,36 @@ Page({
   notice(){
     this.setData({
       isShowModal:true
+    })
+  },
+  handleDel({currentTarget}){
+    let temp = this.data.tourist;
+    const index = currentTarget.dataset.idx;
+    const key = `temp[${index}].isDel`;
+    //debugger
+    let flag = temp[index].isDel?false:true;
+    temp.map((item,i)=>{
+      if(i==index)
+        temp[i].isDel = !temp[i].isDel;
+      else
+        temp[i].isDel = false;
+    })
+    this.setData({
+      tourist:temp
+    })
+    console.log(currentTarget.dataset.idx);
+  },
+  del({ currentTarget }){
+    const idx = currentTarget.dataset.idx;
+    let temp = this.data.tourist;
+    temp.splice(idx,1);
+    this.setData({
+      tourist:temp
+    })
+  },
+  goPay(){
+    wx,wx.navigateTo({
+      url: '../bookingOrderPay/bookingOrderPay',
     })
   }
 })

@@ -127,5 +127,10 @@ Page({
     wx.navigateTo({
       url: 'compass/index',
     })
+  },
+  goWrite(){
+    wx.navigateTo({
+      url: 'writeArticle/index',
+    })
   }
 })

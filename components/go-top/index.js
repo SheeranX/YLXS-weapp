@@ -1,4 +1,7 @@
 // components/goTop/index.js
+/**
+ * 使用该组件需要在页面js引入 util.toTop()，使用参考首页index.js
+ */
 Component({
   /**
    * 组件的属性列表
@@ -43,3 +46,4 @@ Component({
     }
   }
 })
+

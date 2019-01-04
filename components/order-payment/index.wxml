@@ -67,4 +67,4 @@
     </i-radio>
   </i-radio-group>
 </i-panel>
-<view class='payBtn font32'>确认支付</view>
+<view class='payBtn font32' bindtap='confirmPay'>确认支付</view>

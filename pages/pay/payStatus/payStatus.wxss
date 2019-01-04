@@ -1,0 +1,42 @@
+/* pages/pay/paySuccess/paySuccess.wxss */
+.pay-container{
+  background-color: #ebebf6;
+  overflow: hidden;
+}
+
+.pay-box{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.grayColor{
+  color: #666;
+}
+
+.redColor{
+  color: #ff3c00;
+}
+
+.payInfo{
+  padding: 150rpx 0;
+  text-align: center;
+}
+
+.payStatus{
+  margin: 20rpx 0 50rpx 0;
+}
+
+.ovalBtnGroup{
+    text-align: center;
+    justify-content: center;
+}
+
+.ovalBtn{
+  border: 1rpx solid #e9536c;
+  width: 180rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  color: #e9536c;
+  border-radius: 40rpx;
+  margin: 0 60rpx;
+}

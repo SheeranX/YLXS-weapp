@@ -1,7 +1,9 @@
 /* pages/personnel/commentDetail/commentDetail.wxss */
-
-.commentDetail-container {
+page{
   background-color: #ebebf6;
+}
+.commentDetail-container {
+
   /* height: 100%; */
   overflow-y:auto; 
 }
@@ -26,11 +28,13 @@
 
 textarea {
   width: 620rpx;
-  height: 400rpx;
-  padding: 25rpx 20rpx 0 30rpx;
+  min-height: 220rpx;
+  padding: 15rpx 20rpx 0 15rpx;
   border: 1rpx solid #eee;
 }
-
+.upload-container{
+  position: relative;
+}
 .upload{
   width: 100rpx;
   height: 100rpx;
@@ -46,6 +50,7 @@ textarea {
   font-size: 28rpx;
   margin-top: 20rpx;
   color: #666; 
+  margin-bottom:20rpx; 
 }
 .sendComment {
   margin: 40rpx auto;
@@ -58,4 +63,29 @@ textarea {
   text-align: center;
   font-size: 32rpx;
 }
-
+.img-group image{
+    margin-right: 20rpx;
+}
+.img-group>view{
+  position: relative;
+}
+.img-size{
+  width: 100rpx;
+  height: 100rpx;
+}
+.myCanvas{
+  position: fixed;
+  left: 99999px;
+}
+.close{
+  position: absolute;
+  right: 5rpx;
+  top: -14rpx;
+  width:30rpx;
+  height:30rpx;
+  background:#fff;
+  border-radius:50%;
+  border:1px solid #ccc;
+  line-height:26rpx; 
+  text-align:center;
+}

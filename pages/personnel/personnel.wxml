@@ -24,7 +24,7 @@
         <text class='font28 margin-top24'>待支付</text>
       </i-grid-item>
       <i-grid-item i-class="flex-column r-center clear-border">
-        <image src="../../assets/images/icon-main-unused.png" class='img-size'></image>
+        <image src="../../assets/images/icon-main-unused.png" class='img-size' bindtap='unusedClick'></image>
         <text class='font28  margin-top24'>待使用</text>
       </i-grid-item>
       <i-grid-item i-class="flex-column r-center clear-border" bindtap="uncommnetClick">

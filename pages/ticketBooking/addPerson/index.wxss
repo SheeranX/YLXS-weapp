@@ -1,0 +1,21 @@
+/* pages/hotelBooking/addPerson/index.wxss */
+page{
+  background: #ebebeb;
+}
+.margin-top{
+  margin-top: 20rpx;
+}
+.margin-top60{
+  margin-top: 60rpx;
+}
+.clear-padding{
+  padding: 0 10px!important;
+}
+.scan-face{
+  align-items: center;
+  padding: 10rpx 30px;
+}
+.img-size{
+  width: 80rpx;
+  height: 80rpx;
+}

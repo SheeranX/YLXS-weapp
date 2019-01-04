@@ -128,7 +128,7 @@
 .weeks {
 	height: 50rpx;
 	line-height: 50rpx;
-	opacity: 0.5;
+  background:#ededed;
 }
 
 .week {
@@ -136,7 +136,7 @@
 }
 
 .days {
-	height: 500rpx;
+	height: 600rpx;
 }
 
 .grid {
@@ -144,15 +144,16 @@
 }
 
 .day {
-	width: 60rpx;
-	height: 60rpx;
-	color: #88d2ac;
+  width: 100%;
+  height: 100%;
+	color: #000;
 	font-size: 26rpx;
-	font-weight: 200;
+	font-weight: 500;
+  flex-direction: column;
 }
 
 .border-radius {
-	border-radius: 50%;/* modify date border radius*/
+	border-radius: 20rpx;/* modify date border radius*/
 	position: relative;
 	left: 0;
 	top: 0;
@@ -160,7 +161,7 @@
 }
 
 .pink-bg {
-	background-color: #ff629a;
+	background-color: #4b84f7;
 }
 
 .purple-bg {
@@ -241,4 +242,11 @@
 .right-border-radius {
 	border-top-right-radius: 20rpx;
 	border-bottom-right-radius: 20rpx;
+}
+.title{
+  position: absolute;
+  top:5rpx;
+  font-size:18rpx;
+  color:yellow;
+  right:5rpx;
 }

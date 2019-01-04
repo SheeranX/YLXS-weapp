@@ -1,0 +1,8 @@
+<!--pages/ticketBooking/bookingComments/index.wxml-->
+<view>
+  <evaluation evaluativeRate="4.2" item="{{list}}"></evaluation>
+  <comment-list list="{{commentList}}" isImg="{{isImg}}" isType="{{false}}"></comment-list>
+</view>
+ <i-load-more tip="没有更多数据啦~" loading="{{ false }}"  wx:if="{{noData}}"/>
+ <i-load-more loading="{{ true }}"  tip="拼命加载中..." wx:if="{{loading}}"/>
+ <i-go-top isShow="{{isGoTop}}"></i-go-top>

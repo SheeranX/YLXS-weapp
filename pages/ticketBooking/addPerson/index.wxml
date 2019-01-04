@@ -1,0 +1,36 @@
+<!--pages/ticketBooking/addPerson/index.wxml-->
+<!--pages/hotelBooking/addPerson/index.wxml-->
+ <form bindsubmit="formSubmit">
+   <view class='margin-top'>
+   <i-cell i-class="clear-padding">
+      <i-input value="{{form.name}}" title="姓名" autofocus placeholder="请输入游客姓名" bind:change="inputUsername" name="username"/>
+   </i-cell>
+  </view>
+   <view  class='margin-top'>
+      <i-cell i-class="clear-padding" is-link  bind:click="handleClick">
+          <i-input value="{{form.certificate['name']}}" title="证件类型"  placeholder="{{actions[selectedIdx].name}}" name="type" disabled/>
+      </i-cell>
+      <i-cell i-class="clear-padding">
+         <i-input value="{{form.cardID}}" title="证件号"  placeholder="证件号" bind:change="inputId" name="cardnum"/>
+      </i-cell>
+   </view>
+   <view  class='margin-top'>
+    <i-cell i-class="clear-padding">
+      <i-input value="{{form.phone}}" title="手机号"  placeholder="请输入游客手机号（非必填）" type='number' bind:change="inputPhone" name="phoneNum" maxlength='11'/>
+    </i-cell>
+   </view>
+   <view class='flex-row font28 margin-top bg-white scan-face s-between'>
+      <view>
+        <text>面部拍照</text>
+      </view>
+      <view>
+        <image src='https://bulma.io/images/placeholders/128x128.png' class='img-size'></image>
+      </view>
+   </view>
+   <view class='padding-between margin-top60'>
+      <!-- <i-button type="error" long="true" shape="circle" i-class='bg-red' bind:click="confirm">确定</i-button> -->
+       <button form-type="submit" class='btn btn-round btn-danger'>确定</button>
+   </view>
+ </form>
+ <i-action-sheet visible="{{ isShow }}" actions="{{ actions }}" show-cancel bind:cancel="handleCancel" bind:click="handleClickItem" />
+

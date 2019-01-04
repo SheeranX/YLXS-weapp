@@ -1,4 +1,4 @@
 <view>
-<comment-list></comment-list>
-
+  <evaluation evaluativeRate="4.2" item="{{list}}"></evaluation>
+  <comment-list list="{{commentList}}"></comment-list>
 </view>

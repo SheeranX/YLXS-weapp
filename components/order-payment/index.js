@@ -40,5 +40,8 @@ Component({
         current: detail.value
       });
     },
+    confirmPay(){
+      this.triggerEvent('confirm', {})
+    }
   }
 })

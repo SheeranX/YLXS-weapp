@@ -4,6 +4,7 @@
     "i-button":"../../components/iview/button/index",
     "i-panel" :"../../components/iview/panel/index",
     "i-load-more": "../../components/iview/load-more/index",
-    "i-go-top": "../../components/go-top/index"
+    "i-go-top": "../../components/go-top/index",
+    "navbar": "../../components/navbar/index"
   }
 }

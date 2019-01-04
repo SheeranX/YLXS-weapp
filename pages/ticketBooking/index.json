@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+  "i-box": "../../components/box/index",
+  "i-load-more": "../../components/iview/load-more/index",
+  "top-bar": "../../components/top-bar/index",
+  "modal": "../../components/modal/index",
+  "filter": "../../components/filter/index"
+  }
+}

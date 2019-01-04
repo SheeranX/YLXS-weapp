@@ -1,0 +1,12 @@
+<!--components/upload/index.wxml-->
+<view class='upload-box'>
+  <view class='box-item'>
+    <view class='upload add-icon' bindtap='takePhoto'>
+     <i-icon type="add" size="28"/>
+    </view>
+  </view>
+  <view class='box-item img-arr' wx:for="{{imgList}}" wx:for-item="item" wx:key="img">
+    <image src='{{item.imgUrl}}' class='img-size'></image>
+  </view>
+</view>
+<canvas canvas-id='attendCanvasId' class='myCanvas'></canvas>

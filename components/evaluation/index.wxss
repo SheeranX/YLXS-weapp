@@ -1,0 +1,59 @@
+/* components/evaluation/index.wxss */
+
+.font28 {
+  font-size: 28rpx;
+}
+
+.font32 {
+  font-size: 32rpx;
+}
+
+.font36 {
+  font-size: 36rpx;
+}
+
+.font38 {
+  font-size: 38rpx;
+}
+
+.bg-color {
+  background-color: #ebebf4;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.margin-20 {
+  margin: 20rpx 0;
+}
+
+.margin-left-10 {
+  margin-left: 10rpx;
+}
+
+.orangeColor {
+  color: #FF7C43;
+}
+
+.gray {
+  color: #666;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.comment-grade-container {
+  margin: 15rpx 0;
+  background-color: #fff;
+}
+
+.grade-box {
+  padding: 20rpx 30rpx;
+}
+
+.comment-grade {
+  line-height: 170rpx;
+  text-align: center;
+}

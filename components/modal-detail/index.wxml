@@ -1,50 +1,63 @@
 <view class='modal-img'>
-    <image src='../../assets/images/hotel.jpg'></image>
+  <swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  circular="{{circular}}"
+  >
+    <block wx:for="{{imgUrls}}" wx:key = "item">
+      <swiper-item>
+        <image src="{{item}}" data-index = "{{index}}"  bindtap='previewImg'>
+        </image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view>
+  <text class='font32 padding-20'>豪华乐园景观双床房</text>
+  <view class='font28 modal-price border-bottom'>
+    <text class='redColor'>￥769</text>
+    <text class='modal-rackRate'>门市价：<text class='line-through'>￥1299</text></text>
   </view>
-  <view>
-    <text class='font32 padding-20'>豪华乐园景观双床房</text>
-    <view class='font28 modal-price border-bottom'>
-      <text class='redColor'>￥769</text>
-      <text class='modal-rackRate'>门市价：<text class='line-through'>￥1299</text></text>
+  <view class='modal-tips flex-row font28'>
+    <view class='margin-right-20 icon-flex'>
+      <image src='../../assets/images/icon-ok.png'></image>
+      <text>无早</text>
     </view>
-    <view class='modal-tips flex-row font28'>
-      <view class='margin-right-20'>
-        <image src='../../assets/images/icon-ok.png'></image>
-        <text>无早</text>
-      </view>
-      <view class='margin-right-20'>
-        <image src='../../assets/images/icon-ok.png'></image>
-        <text>双床</text>
-      </view>
-      <view class='margin-right-20'>
-        <image src='../../assets/images/icon-ok.png'></image>
-        <text>有窗</text>
-      </view>
-      <view class='margin-right-20'>
-        <image src='../../assets/images/icon-ok.png'></image>
-        <text>不可退改</text>
-      </view>
+    <view class='margin-right-20 icon-flex'>
+      <image src='../../assets/images/icon-ok.png'></image>
+      <text>双床</text>
     </view>
-    <view class='rules font28 padding-20'>
-      <view class='rules-title font28'>退款规则</view>
-      <image src='../../assets/images/icon-times.png'></image>
-      <text class='blueColor margin-right-20'>限时取消</text>
-      <text>入住日当天18点前可以免费取消，逾期不可取消或变更，如果未入住，酒店将扣除全额房费</text>
+    <view class='margin-right-20 icon-flex'>
+      <image src='../../assets/images/icon-ok.png'></image>
+      <text>有窗</text>
     </view>
-    <view class='rules font28 padding-20'>
-      <view class='rules-title font28'>使用规则</view>
-      <text class='list-style-circle'></text>
-      <text>入住日当天18点前可以免费取消，逾期不可取消或变更，如果未入住，酒店将扣除全额房费</text>
-    </view>
-    <view class='rules font28 padding-20'>
-      <view class='rules-title font28'>预订须知</view>
-      <text class='list-style-circle'></text>
-      <text>如需发票，请先与酒店确认可开；酒店电话：12345678901</text>
+    <view class='margin-right-20 icon-flex'>
+      <image src='../../assets/images/icon-ok.png'></image>
+      <text>不可退改</text>
     </view>
   </view>
-  <view class='modal-fixed-button'>
-    <view class='amountPayable font32'>应付总金额：
-      <text class='redColor'>￥769</text>
-    </view>
-    <view class='bookBtn' hover-class='bookBtn-active' hover-stay-time="0">立即预定</view>
+  <view class='rules font28 padding-20'>
+    <view class='rules-title font28'>退款规则</view>
+    <image src='../../assets/images/icon-times.png'></image>
+    <text class='blueColor margin-right-20'>限时取消</text>
+    <text>入住日当天18点前可以免费取消，逾期不可取消或变更，如果未入住，酒店将扣除全额房费</text>
   </view>
+  <view class='rules font28 padding-20'>
+    <view class='rules-title font28'>使用规则</view>
+    <text class='list-style-circle'></text>
+    <text>入住日当天18点前可以免费取消，逾期不可取消或变更，如果未入住，酒店将扣除全额房费</text>
+  </view>
+  <view class='rules font28 padding-20'>
+    <view class='rules-title font28'>预订须知</view>
+    <text class='list-style-circle'></text>
+    <text>如需发票，请先与酒店确认可开；酒店电话：12345678901</text>
+  </view>
+</view>
+<view class='modal-fixed-button'>
+  <view class='amountPayable font32'>应付总金额：
+    <text class='redColor'>￥769</text>
+  </view>
+  <view class='bookBtn' hover-class='bookBtn-active' hover-stay-time="0">立即预定</view>
+</view>

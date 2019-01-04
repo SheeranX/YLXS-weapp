@@ -1,0 +1,12 @@
+<!--components/inputNum/index.wxml-->
+<view class='flex-row'>
+  <view class='operate minus' bindtap='minus'>
+    <text>-</text>
+  </view>
+  <view>
+    <input type='number' class='num' maxlength='3' value="{{value}}"></input>
+  </view>
+  <view class='operate plus' bindtap="plus">
+    <text>+</text>
+  </view>
+</view>

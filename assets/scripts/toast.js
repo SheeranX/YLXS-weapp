@@ -1,7 +1,10 @@
 let promise = require("promise.js");
 let showModal = promise.wxPromise(wx.showModal,true);
 
-//成功提示
+/**
+ * 全局消息的成功提示
+ * @param {string} -msg 需要传入的提示信息
+ */
  const success = (msg)=>{
     wx.showToast({
       title: msg,
@@ -10,7 +13,10 @@ let showModal = promise.wxPromise(wx.showModal,true);
     })
  }
 
-//提示（包括错误提示，信息提示，警告提示）
+/**
+ * 全局提示（包括错误提示，信息提示，警告提示）
+ * @param {string} -msg 需要传入的提示信息
+ */
  const tip = (msg)=>{
    wx.showToast({
      title: msg,
@@ -18,7 +24,10 @@ let showModal = promise.wxPromise(wx.showModal,true);
      duration:2000
    })
  }
-//弹窗
+/**
+ * 弹窗提示
+ * @param {object} -obj 小程序弹窗封装
+ */
 const modal = (obj)=>{
 
   return showModal({

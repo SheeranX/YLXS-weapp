@@ -1,4 +1,5 @@
 <!--pages/hotelBooking/bookingDetail/bookingDetail.wxml-->
+<import src="../../../plugins/datepicker/index.wxml" />
 <view class='container bg-gray'>
   <view class='hotel-header'>
     <image class='hotel-banner' src='../../../assets/images/hotel.jpg'></image>
@@ -6,27 +7,28 @@
   <view class='hotel-body'>
     <i-cell-group>
       <i-cell i-class="font32" title="丽江金茂凯悦酒店"></i-cell>
-      <i-cell title="丽江市玉龙县丽江古城以北15公里处" is-link url="/pages/dashboard/index">
-        <i-icon type="coordinates_fill" slot="icon" size="20" color="#80848f" />
+      <i-cell title="丽江市玉龙县丽江古城以北15公里处"  i-class="address" url="/pages/dashboard/index">
+        <i-icon type="coordinates_fill" slot="icon" size="20" color="#4886f9" />
+         <i-icon type="enter" slot="footer" size="16" color='#666' />
       </i-cell>
     </i-cell-group>
     <i-row i-class="cell-box bg-white">
       <i-col span="12" i-class="col-class">
-        <view class='border-right txt-center' bindtap='productClick'>
-          <view class='font32'>酒店介绍</view>
+        <view class='border-right txt-center flex-column f-center r-center' bindtap='productClick'>
+          <view class='font32 txt-center'>酒店介绍</view>
           <text class='gray font24'>开放时间/优惠政策</text>
         </view>
-        <i-icon class="cell-box-icon" size='16' type="enter" />
+        <i-icon class="cell-box-icon" size='16' type="enter" color='#666'/>
       </i-col>
       <i-col span="12" i-class="col-class">
-        <view class='txt-center redColor' bindtap='commentClick'>
+        <view class='txt-center redColor flex-column f-center r-center' bindtap='commentClick'>
           <view>
-            <text class='font36'>96.6%</text>
+            <text class='font36 txt-center'>96.6%</text>
             <text class='font32'>好评率</text>
           </view>
           <text class='font24'>来自1502位游客点评</text>
         </view>
-        <i-icon class="cell-box-icon" size='16' type="enter" />
+        <i-icon class="cell-box-icon" size='16' type="enter" color='#666'/>
       </i-col>
     </i-row>
   </view>
@@ -36,59 +38,95 @@
       <i-tab class="hotel-tab" key="bookingInfo" title="预订须知"></i-tab>
     </i-tabs>
     <view wx:if="{{current == 'productList'}}">
-      <view class='list-flex padding-20 border-bottom'>
+      <view class='list-flex padding-20 border-bottom' bindtap='showDatepicker'>
         <view class=''>
-          <text class='font32 margin-right-20'>9月26日</text>
+          <text class='font32 margin-right-20'>{{datepicker.durationDate[0].month||'--'}}月{{datepicker.durationDate[0].day||'--'}}日</text>
           <text class='font28 gray'>周六入住</text>
         </view>
         <view>
-          <text class='font32 margin-right-20'>9月27日</text>
+          <text class='font32 margin-right-20'>{{datepicker.durationDate[1].month||'--'}}月{{datepicker.durationDate[1].day||'--'}}日</text>
           <text class='font28 gray'>周日离店</text>
         </view>
         <view>
-          <text class='font28 margin-right-20 blueColor'>共一晚</text>
+          <text class='font28 margin-right-20 blueColor'>共{{duration}}晚</text>
           <i-icon size='16' type="enter" color='#699ae0' />
         </view>
       </view>
       <view class='list-container' wx:for="{{list}}" wx:key="item" wx:for-item="item">
-        <view class='list-item'>
-          <view class='font32 margin-bottom-10'>
-            <text class='list-item-title' bindtap='goOrder'>{{item.title}}</text>
-            <text class='gray'>详情 ></text>
+        <view class='list-item flex-row  s-between'>
+          <view class='flex-column'>
+            <view class='font28 margin-bottom-10'>
+              <text class='list-item-title' bindtap='goOrder'>{{item.title}}</text>
+              <text class='gray' bindtap='productDetailClick'>详情</text>
+              <i-icon type="enter" />
+            </view>
+            <view class='font24 margin-bottom-10'>
+              <text class='margin-right-20'>无早</text>
+              <text class='margin-right-20'>双床</text>
+              <text class='margin-right-20'>有窗</text>
+              <text>不可退改</text>
+            </view>
+            <view>
+              <text class='font36 redColor margin-right-20'>￥{{item.price}}</text>
+              <text class='font28 gray'>起</text>
+            </view>
           </view>
-          <view class='font28 margin-bottom-10'>
-            <text class='margin-right-20'>无早</text>
-            <text class='margin-right-20'>双床</text>
-            <text class='margin-right-20'>有窗</text>
-            <text>不可退改</text>
+          <!-- 折叠 -->
+          <view class='list-item-right' data-index="{{index}}" bindtap='collapse'>
+            <view class='list-item-isRoomful font28 gray'>
+              {{item.isRoomful}}
+            </view>
+            <view>
+              <i-icon i-class="{{item.flag ? 'list-item-icon1':'list-item-icon2'}}" size='24' type="enterinto" color='#666' />
+            </view>
           </view>
-          <view>
-            <text class='font32 redColor margin-right-20'>￥{{item.price}}</text>
-            <text class='font28 gray'>起</text>
-          </view>
-          <text class='list-item-isRoomful font28 gray'>{{item.isRoomful}}</text>
-          <i-icon class='list-item-icon' size='16' type="{{item.flag ? 'unfold' : 'packup'}}" data-index="{{index}}" bindtap='collapse' />
         </view>
-        <view class="list-item bg-gray {{ (item.flag) ? 'show':'hide'}}">
-          <view class='font32 margin-bottom-10'>
-            <text class='list-item-title'>{{item.title}}</text>
+        <!-- 被折叠的内容 -->
+        <view class="list-item flex-row s-between bg-gray {{ item.flag ? '':'hide'}}">
+          <view class='flex-column s-between'>
+            <view class='font28 margin-bottom-10'>
+              <text class='list-item-title'>{{item.title}}</text>
+            </view>
+            <view class='font24 margin-bottom-10'>
+              <text class='margin-right-20'>无早</text>
+              <text class='margin-right-20'>双床</text>
+              <text class='margin-right-20'>有窗</text>
+              <text>不可退改</text>
+            </view>
+            <view bindtap='bookInfo'>
+              <text class='font28 gray' >预订须知 </text>
+              <i-icon type="enter" color='#666'/>
+            </view>
           </view>
-          <view class='font28 margin-bottom-10'>
-            <text class='margin-right-20'>无早</text>
-            <text class='margin-right-20'>双床</text>
-            <text class='margin-right-20'>有窗</text>
-            <text>不可退改</text>
+          <view class='flex-row s-between r-center'>
+            <view class=' font36 gray'>￥796</view>
+            <view class='list-item-button' bindtap='bookBtnClick'>预定</view>
           </view>
-          <view>
-            <text class='font28 gray margin-right-20'>预订须知</text>
-          </view>
-          <text class='list-item-right-price font32 gray'>￥796</text>
-          <button class='list-item-button' type='warn' size='mini' bindtap='bookBtnClick'>预定</button>
         </view>
       </view>
+      <i-load-more loading="{{bottomLoading}}" wx:if="{{bottomLoading}}" />
+    </view>
+
+    <view class='font32' wx:else>
+      这里是预定须知内容
     </view>
   </view>
 </view>
+
+<!-- 酒店详情弹窗 -->
 <modal class="modal" isShow="{{isShowModal}}" position="bottom" minHeight="900rpx">
   <modal-detail></modal-detail>
 </modal>
+
+<!-- 预定须知弹窗 -->
+<modal class="modal" isShow="{{isShowBookInfoModal}}" position="bottom" minHeight="900rpx">
+  这里是预定须知弹窗内容
+</modal>
+
+<!-- 时间控件 -->
+<!-- <datepicker></datepicker> -->
+<view class="datepicker-box">
+  <!-- <button type="primary" bindtap="showDatepicker"> 点击唤起日期选择器 </button>  -->
+  <template is="datepicker" data="{{...datepicker}}" />
+</view>
+<!-- <production-list></production-list> -->

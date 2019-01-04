@@ -1,0 +1,197 @@
+<!--pages/hotelBooking/order/index.wxml-->
+<import src="../../../plugins/datepicker/index.wxml" />
+<wxs src="../../../assets/scripts/filter.wxs" module="filter" />
+<view class='box-btm-sapce'>
+  <!-- 顶部信息 -->
+  <view class='container bg-white padding-between'>
+    <i-row>
+      <i-col span='19'>
+        <text class='font28 bold'>希尔顿总统套房</text>
+      </i-col>
+      <i-col span='5'>
+        <text class='font28 danger' bindtap='notice'>购买须知></text>
+      </i-col>
+    </i-row>
+    <i-divider i-class="divider" />
+    <view class='font28'>
+      <text class='font28 bold'>使用日期</text>
+      <view class='flex-row card-list font24'>
+        <view class='card-item flex-column f-center gray {{item.choosed?"active":""}}' wx:for="{{cardList}}" wx:for-index="idx" wx:key="card" wx:for-item="item" bindtap='dayChoose' data-idx="{{idx}}" >
+          <text class='bold'>{{item.date=='更多日期'&&datepicker.selectVal?datepicker.selectVal:item.date}}</text>
+          <!-- <text>更多日期</text> -->
+          <text class='danger' wx:if="{{item.left!=0}}">￥{{item.price}}</text>
+          <text class='info' wx:if="{{item.left!=0}}">剩余：{{item.left}}</text>
+          <text wx:elif="{{item.date=='更多日期'}}" class='danger'>￥{{item.price}}起</text>
+          <text wx:else>不可订</text>
+          <image src='../../../assets/images/icon_triangle.png' class='triangle' wx:if="{{item.choosed}}"></image>
+        </view>
+        <!-- <view class='card-item flex-column f-center gray' bindtap="showDatepicker">
+          <text class='bold' wx:if="{{datepicker.selectVal}}">{{datepicker.selectVal}}</text>
+          <text wx:else>更多日期</text>
+          <text class='danger' wx:if="{{item.left!=0}}">￥118起</text>
+          <image src='../../../assets/images/icon_triangle.png' class='triangle' wx:if="{{item.choosed}}"></image>
+          <view class='more-arrow'>
+            <i-icon type="enter" />
+          </view>
+        </view> -->
+        <view class='more-arrow'>
+            <i-icon type="enter" />
+        </view>
+      </view>
+    </view>
+    <i-divider i-class="divider" />
+    <view class='flex-row s-between r-center' bindtap='getTime' data-flag="0">
+      <view class='font28'>
+        <text class='pic-right'>大索道乘坐时间</text>
+        <text class='gray'>{{chooseTime[0]}}</text>
+      </view>
+      <view>
+        <i-icon type="enter" size='24' color='#ccc' />
+      </view>
+    </view>
+    <i-divider i-class="divider" />
+    <view class='flex-row s-between r-center' bindtap='getTime' data-flag="1">
+      <view class='font28'>
+        <text class='pic-right'>中索道乘坐时间</text>
+        <text class='gray'>{{chooseTime[1]}}</text>
+      </view>
+      <view>
+        <i-icon type="enter" size='24' color='#ccc' />
+      </view>
+    </view>
+    <i-divider i-class="divider" />
+    <view>
+      <i-row>
+        <i-col span="6">
+          <text class='font28 bold'>购买数量</text>
+        </i-col>
+        <i-col span="12" offset="6">
+          <input-num value="{{value}}" />
+        </i-col>
+      </i-row>
+    </view>
+    <i-divider i-class="divider" />
+    <view class='flex-column font24'>
+      <text class='gray'>3月29日当日使用有效</text>
+      <text class='font28 info padding-top'>此产品在2018年06月20日 00:00:00前可退款</text>
+    </view>
+    <i-divider i-class="divider" />
+  </view>
+  <!-- 订单信息 -->
+  <view class='container bg-white margin-top30 padding-between'>
+    <view>
+      <text class='font28 bold'>订单信息</text>
+    </view>
+    <i-divider i-class="divider" />
+    <view class='flex-row s-between'>
+      <view class='flex-column font28'>
+        <text>入住人信息</text>
+        <view class='padding-top'>
+          <text>需要</text>
+          <text class='danger'>1位</text>
+          <text>用于入住使用</text>
+        </view>
+      </view>
+      <navigator url='../addPerson/index' hover-class='none'>
+        <view>
+          <i-icon type='mine' size='24' color='#4886f9'></i-icon>
+        </view>
+      </navigator>
+    </view>
+    <form bindsubmit="formSubmit" class='form'>
+      <view class='form-group flex-row'>
+        <text class='font28 bold'>姓名</text>
+        <input type='text' maxlength="15" placeholder='取票人姓名'></input>
+      </view>
+      <view class='form-group flex-row'>
+        <text class='font28 bold'>身份证</text>
+        <input type='number' maxlength="11" placeholder='用于景区取票使用'></input>
+      </view>
+      <view class='form-group flex-row'>
+        <text class='font28 bold'>手机号</text>
+        <input type='number' maxlength="11" placeholder='用于接收订单信息'></input>
+      </view>
+      <view class='form-group flex-row'>
+        <text class='font28 bold'>备注</text>
+        <input type='number' maxlength="11" placeholder='订单备注'></input>
+      </view>
+    </form>
+  </view>
+  <!-- 游客信息 -->
+  <view class='container bg-white padding-between margin-btm'>
+    <view>
+      <text class='font28'>游客信息</text>
+    </view>
+    <view class='flex-row font28 s-between r-center'>
+      <view class='padding-top'>
+        <text>需要填写4位游客信息</text>
+        <text class='danger'>4位</text>
+        <text>已填写,</text>
+        <text class='danger'>2位</text>
+      </view>
+      <view>
+        <navigator url='../addPerson/index' hover-class='none'>
+          <view>
+            <i-icon type='mine' size='24' color='#4886f9'></i-icon>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class='add-list'>
+      <view class='add-item flex-row s-between r-center' wx:for="{{tourist}}" wx:for-item="item" wx:key="unique" wx:for-index="idx">
+        <view class='flex-row s-between r-center'>
+          <view class='label'>
+            <text class='font24'>游客{{idx}}</text>
+          </view>
+          <view class='{{item.isDel?"del-active":""}}' bindtap='handleDel' data-idx="{{idx}}">
+            <i-icon type="offline_fill" size='24' color='#e9536c' />
+          </view>
+          <image src='{{item.imageUrl}}' class='img-tiny pic-right'></image>
+          <view class='flex-column font24'>
+            <text>{{item.name}}</text>
+            <text>{{item.cardType}}:{{item.card}}</text>
+          </view>
+        </view>
+        <view>
+          <i-icon type="enter" size='24' color='#ccc' wx:if="{{!item.isDel}}" bindtap='update' data-idx="{{idx}}"/>
+          <button class='btn btn-small btn-danger' data-idx="{{idx}}" bindtap='del' wx:else>删除</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='flex-row font28 s-between btm-bar'>
+    <view class='padding-between'>
+      <text>应付总额：</text>
+      <text class='warning'>￥280</text>
+    </view>
+    <view class='go-pay' bindtap='goPay'>
+      <text>去支付</text>
+    </view>
+  </view>
+</view>
+<modal isShow="{{isShowModal}}" position="bottom">
+  <view>
+    我是购票须知
+  </view>
+</modal>
+<!-- <datepicker></datepicker> -->
+<view class="datepicker-box">
+  <!-- <button type="primary" bindtap="showDatepicker"> 点击唤起日期选择器 </button>  -->
+  <template is="datepicker" data="{{...datepicker}}" />
+</view>
+<!-- 索道乘坐时间 -->
+<modal isShow="{{isShowBuyTicket}}" position="bottom">
+  <view class='txt-center font28 time-pick-list'>
+    <view class='time-pick-title'>
+      <text>选择索道乘坐时间</text>
+    </view>
+    <i-divider i-class="divider" />
+    <view class='time-pick-item' wx:for="{{time}}" wx:for-item="item" wx:key="time" bindtap='chooseTime' data-idx="{{idx}}" wx:for-index="idx">
+      <view class='item-width flex-row'>
+        <text>{{item.duration}}</text>
+        <text class='info {{item.left==0?"visiabled":""}}'>（剩余{{item.left}}）</text>
+      </view>
+      <i-divider i-class="divider" />
+    </view>
+  </view>
+</modal>

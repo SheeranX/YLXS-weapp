@@ -5,6 +5,7 @@
     "i-col": "../../components/iview/col/index",
     "i-progress": "../../components/iview/progress/index",
     "i-rate": "../../components/iview/rate/index",
-    "i-icon": "../../components/iview/icon/index"
+    "i-icon": "../../components/iview/icon/index",
+    "i-scroll-view":"../scroll-view/index"
   }
 }

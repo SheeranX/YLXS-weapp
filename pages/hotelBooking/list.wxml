@@ -1,15 +1,18 @@
 <!--pages/hotelBooking/list.wxml-->
 <view class='container bg-white'>
-<top-bar></top-bar>
-<filter isShowFilter="{{isShowFilter}}"></filter>
+  <top-bar bind:filter="filter"></top-bar>
   <view class='padding-between'>
     <i-scroll-view>
       <navigator url='./bookingDetail/bookingDetail' hover-class="other-navigator-hover">
-        <i-box  wx:for="{{list}}" wx:for-item="val" wx:key="unique" item="{{val}}" id='swiper'>
+        <i-box wx:for="{{list}}" wx:for-item="val" wx:key="unique" item="{{val}}" id='swiper' >
         </i-box>
       </navigator>
     </i-scroll-view>
     <i-load-more tip="没有更多数据啦~" loading="{{ false }}" wx:if="{{noData}}" />
-    <i-load-more loading="{{ false }}" tip="拼命加载中..." wx:if="{{loading}}" />
+    <i-load-more loading="{{ loading }}" tip="拼命加载中..." wx:if="{{loading}}" />
   </view>
 </view>
+<!-- <modal isShow="{{!isShowModal}}" position="bottom"></modal> -->
+<filter isShowFilter="{{!isShowModal}}" bind:finish="finish" data="{{condition}}" key="sid" content="content" title="name">
+  <top-bar></top-bar>
+</filter>

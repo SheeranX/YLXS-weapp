@@ -5,7 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    avatar:'https://bulma.io/images/placeholders/480x480.png',//头像
+  },
 
+  changeAvatar(){
+    var _this =this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        console.log(tempFilePaths)
+        _this.setData({
+          avatar:tempFilePaths[0]
+        })
+      }
+    })
   },
 
   /**

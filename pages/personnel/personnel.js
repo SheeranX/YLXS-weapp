@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    
   },
 
   /**
@@ -26,8 +26,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    wx.setBackgroundColor({
+      backgroundColor:'#000'
+    })
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#5c9bfd',
+      animation: {
+        duration: 400,
+        timingFunc: 'easeIn'
+      }
+    })
+    wx.setNavigationBarTitle({
+      title: '个人中心'
+    })
   },
+
+  //设置
   settingClick() {
     wx.navigateTo({
       url: 'settings/settings',
@@ -39,14 +54,25 @@ Page({
       url: 'myOrder/myOrder',
     })
   },
+
+  //待评价
   uncommnetClick(){
       wx.navigateTo({
         url: 'commentDetail/commentDetail',
       })
   },
+
+  //待支付
   unpayClick(){
     wx.navigateTo({
-      url: 'orderDetail/orderDetail',
+      url: 'myOrder/myOrder',
+    })
+  },
+
+  //待使用
+  unusedClick(){
+    wx.navigateTo({
+      url: 'myOrder/myOrder',
     })
   },
   /**

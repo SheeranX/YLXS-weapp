@@ -1,75 +1,58 @@
 <!--pages/personnel/myOrder/myOrder.wxml-->
 <view class='myOrder-container'>
-<i-tabs current="{{ current }}" bindchange="handleChange" i-class="tabs">
-  <i-tab key="all" title="全部"></i-tab>
-  <i-tab key="unpaid" title="待支付"></i-tab>
-  <i-tab key="unuse" title="待使用"></i-tab>
-  <i-tab key="uncomment" title="待评价"></i-tab>
-</i-tabs>
-<view class='list-container'>
-  <view class='font28'>
-    <view class='myOrder-mark'>景区</view>
-    <view class='float-right mg-right20'>
-      <i-icon type="enter" size='20' />
-    </view>
-  </view>
-  <view class='order-list font28'>
-    <view class='list-item gray'>
-      <text>批次号 1781934682156</text>
-      <text class='float-right'>已支付</text>
-    </view>
-    <view class='list-item'>
-      <text>张大大 | 135948512</text>
-      <text class='float-right font28 gray'>2018-09-30 16:50:12</text>
-    </view>
-  </view>
-  <view class='order-list font28'>
-    <view class='list-item gray'>
-      <text>订单号 1781934682156</text>
-      <text class='float-right'>已支付</text>
-    </view>
-    <view class='list-item font28'>
-      <text class='info'>济南野生动物园年卡</text>
-      <text class='float-right'>￥200</text>
-    </view>
-    <view class='list-item font28'>
-      <text>成人年卡</text>
-      <text class='float-right gray'>*1</text>
-    </view>
-  </view>
+  <i-tabs current="{{ current_scroll }}" fixed="true" bindchange="handleChangeScroll" i-class="tabs">
+    <i-tab key="{{item.key}}" title="{{item.title}}" wx:for="{{tab}}" wx:for-item="item" wx:key="idx" i-class="tab-space"></i-tab>
+  </i-tabs>
+  <swiper style='height:{{swiperHeight}}rpx;margin-top:90rpx' bindchange='swiperChange' current='{{current_swiper}}'>
+    <swiper-item wx:for="{{tab}}" wx:for-item="item" wx:key="swiper">
+      <i-scroll-view>
+        <view class='list-container' wx:for="{{list}}" wx:key="item" wx:for-item="item" id='swiper'>
+          <view class='font28'>
+            <view class="myOrder-mark {{item.orderType=='景区' ? 'bg-blue' : 'bg-red'}}">{{item.orderType}}</view>
+            <view class='float-right mg-right20'>
+              <i-icon type="enter" size='20' />
+            </view>
+          </view>
+          <view class='order-list font28'>
+            <view class='list-item gray'>
+              <text>批次号 {{item.batchNum}}</text>
+              <text class='float-right'>{{item.payStatus}}</text>
+            </view>
+            <view class='list-item'>
+              <text>{{item.name}} | {{item.phone}}</text>
+              <text class='float-right font28 gray'>{{item.dataTime}}</text>
+            </view>
+          </view>
+          <!-- wx:if="{{showMoreFlg ? (index == listIndex) : (item.orderList.length)}}" -->
+          <view class="order-list font28" wx:for="{{item.orderList}}" wx:for-item="orderItem" wx:key="orderItem" data-idx="{{index}}" data-index="{{index}}" id='orderList' bindtap='orderListClick'>
+            <view class='list-item gray'>
+              <text>订单号 {{orderItem.orderNum}}</text>
+              <text class='float-right'>{{orderItem.orderStatus}}</text>
+            </view>
+            <view class='list-item font28'>
+              <text class='info'>{{orderItem.cardName}}</text>
+              <text class='float-right'>￥{{orderItem.cardPrice}}</text>
+            </view>
+            <view class='list-item font28'>
+              <text>{{orderItem.cardType}}</text>
+              <text class='float-right gray'>*{{orderItem.cardAmount}}</text>
+            </view>
+          </view>
+          <!-- <view class='collapseItem' data-list="{{item.orderList}}" data-index="{{index}}" bindtap='showMoreData' wx:if="{{item.orderList.length > 1 }}">
+            <view wx:if="{{showMoreFlg}}">
+              <text>显示剩余{{item.orderList.length-1}}件</text>
+              <i-icon type="unfold" />
+            </view>
+            <view wx:else>
+              <text>收起</text>
+              <i-icon type="packup" />
+            </view>
+          </view> -->
+        </view>
+      </i-scroll-view>
+    </swiper-item>
+  </swiper>
+  <i-load-more tip="没有更多数据啦~" loading="{{ false }}" wx:if="{{noData}}" />
+  <i-load-more loading="{{ true }}" tip="拼命加载中..." wx:if="{{loading}}" />
 </view>
-<view class='list-container'>
-  <view class='font28'>
-    <view class='myOrder-mark bg-red'>酒店</view>
-    <view class='float-right mg-right20'>
-      <i-icon type="enter" size='20' />
-    </view>
-  </view>
-  <view class='clearfloat'></view>
-  <view class='order-list font28'>
-    <view class='list-item gray'>
-      <text>批次号 1781934682156</text>
-      <text class='float-right'>已支付</text>
-    </view>
-    <view class='list-item'>
-      <text>张大大 | 135948512</text>
-      <text class='float-right font28 gray'>2018-09-30 16:50:12</text>
-    </view>
-  </view>
-  <view class='order-list font28'>
-    <view class='list-item gray'>
-      <text>订单号 1781934682156</text>
-      <text class='float-right'>已支付</text>
-    </view>
-    
-    <view class='list-item'>
-      <text class='info'>济南野生动物园年卡</text>
-      <text class='float-right'>￥200</text>
-    </view>
-    <view class='list-item'>
-      <text>成人年卡</text>
-      <text class='float-right gray'>*1</text>
-    </view>
-  </view>
-</view>
-</view>
+<i-go-top isShow="{{isGoTop}}"></i-go-top>

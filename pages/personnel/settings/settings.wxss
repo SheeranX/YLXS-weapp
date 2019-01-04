@@ -1,12 +1,17 @@
 /* pages/personnel/settings/settings.wxss */
+page{
+background-color: #ebebf6;
+}
 .setting-container{
-  background-color: #ebebf6;
   overflow: hidden;
+}
+.avatar{
+  color: #495060;
 }
 .save-setting{
   width: 600rpx;
-  height: 65rpx;
-  line-height: 65rpx;
+  height: 75rpx;
+  line-height: 75rpx;
   font-size: 32rpx;
   background-color: #eb536c;
   border-radius: 40rpx;

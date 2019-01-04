@@ -47,7 +47,7 @@
 }
 
 .modal-img image {
-  height: 260rpx;
+  height: 100%;
   width: 100%;
 }
 
@@ -77,6 +77,11 @@
   margin-right: 10rpx;
 }
 
+.icon-flex{
+  display: flex;
+  align-items: center;
+}
+
 .rules-title {
   border-left: 8rpx solid #3388d9;
   padding-left: 10rpx;
@@ -86,7 +91,8 @@
 .rules image {
   width: 30rpx;
   height: 30rpx;
-  vertical-align: middle;
+  padding-top: 10rpx;
+  /* vertical-align: middle; */
   padding-right: 10rpx;
 }
 
@@ -112,11 +118,12 @@
 }
 
 .amountPayable {
-  padding: 30rpx 100rpx;
+  padding: 28rpx 100rpx;
   width: 60%;
   border: 1rpx solid #e9eaec;
   border-right: none;
   text-align: center;
+  white-space: nowrap;
   /* background-color: gray; */
 }
 
@@ -124,9 +131,10 @@
   width: 40%;
   background-color: #e9536c;
   border: 1rpx solid #e9536c;
-  padding: 30rpx 40rpx;
+  padding: 28rpx 40rpx;
   text-align: center;
   color: white;
+  font-size: 32rpx;
 }
 
 .bookBtn-active {

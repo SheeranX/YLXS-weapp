@@ -9,6 +9,8 @@
     "i-tab": "../../../components/iview/tab/index",
     "modal":"../../../components/modal/index",
     "modal-detail": "../../../components/modal-detail/index",
-    "comment-list": "../../../components/comments-list/index"
+    "comment-list": "../../../components/comments-list/index",
+    "production-list": "../../../components/production-list/index",
+    "i-load-more": "../../../components/iview/load-more/index"
   }
 }

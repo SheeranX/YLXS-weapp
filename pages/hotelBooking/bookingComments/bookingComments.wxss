@@ -1,1 +1,4 @@
 /* pages/hotelBooking/bookingComments/bookingComments.wxss */
+page{
+  background-color: #ebebf6;
+}

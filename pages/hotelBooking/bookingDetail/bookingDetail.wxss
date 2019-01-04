@@ -1,5 +1,5 @@
 /* pages/hotelBooking/bookingDetail/bookingDetail.wxss */
-
+@import '../../../plugins/datepicker/index.wxss';
 .bg-color {
   background-color: #ebebf4;
 }
@@ -77,28 +77,33 @@
   padding: 20rpx;
 }
 
+.address{
+  padding-right: 20rpx !important;
+}
+
 .list-item {
   border-bottom: 1rpx solid #e9eaec;
   padding: 20rpx 30rpx;
-  position: relative;
 }
 
 .list-item-title {
   margin-right: 30rpx;
 }
-
-.list-item-icon {
-  position: absolute;
-  top: 50%;
-  right: 40rpx;
-  transform: translateY(-50%);
+.list-item-right{
+  display: flex;
+  align-items: center;
+  /* height: 145rpx; */
+}
+.list-item-icon1 {
+  transform:rotate(-90deg);
+}
+.list-item-icon2 {
+  transform:rotate(90deg);
 }
 
 .list-item-isRoomful {
-  position: absolute;
-  top: 50%;
-  right: 80rpx;
-  transform: translateY(-50%);
+  white-space: nowrap;
+  margin-right: 10rpx;
 }
 
 .bg-gray {
@@ -106,24 +111,19 @@
 }
 
 .list-item-button {
-  position: absolute;
-  top: 50%;
-  right: 40rpx;
-  transform: translateY(-50%);
+  width: 110rpx;
+  height: 55rpx;
+  line-height: 55rpx;
   color: #fff;
   background-color: #e9536c;
   text-align: center;
-}
-
-.list-item-right-price {
-  position: absolute;
-  top: 50%;
-  right: 200rpx;
-  transform: translateY(-50%);
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  margin-left: 10rpx;
 }
 
 .show {
-  display: block;
+  /* display: block; */
 }
 
 .hide {
@@ -133,4 +133,10 @@
 .modal {
   overflow-y: auto;
 }
+.full-w{
+  width: 100%;
+}
 
+.center{
+  margin: 0 auto;
+}

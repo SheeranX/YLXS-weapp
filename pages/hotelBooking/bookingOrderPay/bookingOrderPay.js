@@ -5,8 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    isShow: true,
+    list: [{
+      id: 1,
+      name: '微信支付',
+      img: '../../../assets/images/wxPay.png',
+    }, {
+      id: 2,
+      name: '支付宝',
+      img: '../../../assets/images/aliPay.png'
+    }, {
+      id: 3,
+      name: '网银支付',
+        img: '../../../assets/images/uniaonPay.png'
+    }],
+    position: 'right',
+    current: '微信支付'
   },
+
+  collapse() {
+    this.setData({
+      isShow: !this.data.isShow
+    })
+  },
+  handleChange({
+    detail = {}
+  }) {
+    this.setData({
+      current: detail.value
+    });
+  },
+  confirmPay() {
+    wx.navigateTo({
+      url: '../../pay/payStatus/payStatus',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -19,7 +53,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    this.animation = wx.createAnimation()
   },
 
   /**
@@ -27,6 +61,11 @@ Page({
    */
   onShow: function() {
 
+  },
+  confirm() {
+    wx.navigateTo({
+      url: '../../pay/paySuccess/paySuccess',
+    })
   },
 
   /**

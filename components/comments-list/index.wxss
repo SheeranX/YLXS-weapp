@@ -1,5 +1,7 @@
 /* pages/hotelBooking/bookingComments/bookingComments.wxss */
-
+.font24{
+  font-size: 24rpx;
+}
 .font28 {
   font-size: 28rpx;
 }
@@ -27,15 +29,19 @@
 .margin-20 {
   margin: 20rpx 0;
 }
-
+.sub{
+  vertical-align:sub;
+}
 .margin-left-10 {
   margin-left: 10rpx;
 }
 
 .orangeColor {
-  color: #ff7e36;
+  color: #FF7C43;
 }
-
+.i-rate-current{
+   color: #FF7C43;
+}
 .gray {
   color: #666;
 }
@@ -97,4 +103,27 @@
   text-align: center;
   font-size: 24rpx;
   line-height: 40rpx;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.cell{
+  width: 20%;
+  display: inline-block;
+}
+.img-box{
+  padding: 5rpx;
+  height: 150rpx;
+  box-sizing: border-box;
+}
+.img{
+  height: 100%;
+  width: 100%;
+  border-radius: 15rpx;
+}
+.scroll-x {
+  white-space:nowrap;
 }

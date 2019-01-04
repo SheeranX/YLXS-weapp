@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-row": "../../components/iview/row/index",
+    "i-col": "../../components/iview/col/index",
+    "i-progress": "../../components/iview/progress/index"
+  }
+}

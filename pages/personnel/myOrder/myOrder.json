@@ -2,6 +2,9 @@
   "usingComponents": {
     "i-tabs": "../../../components/iview/tabs/index",
     "i-tab": "../../../components/iview/tab/index",
-    "i-icon": "../../../components/iview/icon/index"
+    "i-icon": "../../../components/iview/icon/index",
+    "i-load-more": "../../../components/iview/load-more/index",
+    "i-scroll-view": "../../../components/scroll-view/index",
+    "i-go-top": "../../../components/go-top/index"
   }
 }

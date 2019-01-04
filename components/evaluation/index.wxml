@@ -1,0 +1,36 @@
+<!--components/evaluation/index.wxml 评价-->
+  <i-row i-class="comment-grade-container">
+    <i-col span="8" i-class="col-class">
+      <view class='orangeColor font38 comment-grade bg-white'>
+        <text>{{evaluativeRate}}</text>
+        <text class='font32'>分</text>
+        <text class='margin-left-10 '>很好</text>
+      </view>
+    </i-col>
+    <i-col span="16" i-class="col-class">
+      <i-col span="12" i-class="col-class">
+        <view class='font28 grade-box'>
+          <text>{{item.name1}}({{item.grade1}})</text>
+          <view class="progress-item">
+            <i-progress percent="25" i-class="orangeColor" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+          <text>{{item.name2}}({{item.grade2}})</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+        </view>
+      </i-col>
+      <i-col span="12" i-class="col-class">
+        <view class='font28 grade-box'>
+          <text>{{item.name3}}({{item.grade3}})</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+          <text>{{item.name4}}({{item.grade4}})</text>
+          <view class="progress-item">
+            <i-progress percent="25" stroke-width="5" hide-info="true"></i-progress>
+          </view>
+        </view>
+      </i-col>
+    </i-col>
+  </i-row>

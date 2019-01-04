@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "evaluation": "../../../components/evaluation/index",
+    "comment-list": "../../../components/comments-list/index",
+    "i-go-top": "../../../components/go-top/index",
+    "i-load-more": "../../../components/iview/load-more/index"
+  }
+}

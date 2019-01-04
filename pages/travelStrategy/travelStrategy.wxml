@@ -2,7 +2,7 @@
 <view class='container bg-white'>
   <view class='flex-row s-between'>
     <view class='compass-box' bindtap='goCompass'>
-      <image src='https://bulma.io/images/placeholders/480x480.png' class='img-responsive img-round'></image>
+      <image src='../../assets/images/driverFree.png' class='img-responsive img-round'></image>
       <view class='box-content font24'>
         <view class='title'>
           <text class='font28 bold'>自驾游指南</text>
@@ -14,7 +14,7 @@
       </view>
     </view>
     <view class='compass-box' bindtap='goCompass'>
-      <image src='https://bulma.io/images/placeholders/480x480.png' class='img-responsive img-round'></image>
+      <image src='../../assets/images/guideFree.png' class='img-responsive img-round'></image>
       <view class='box-content font24'>
         <view class='title'>
           <text class='font28 bold'>自由行指南</text>
@@ -45,7 +45,9 @@
     <swiper current='{{current}}' style='height:280rpx;' circular='{{true}}'>
       <swiper-item>
         <view class='txt-center font28 bold attention-title'>
-          <i-icon type="scan" size="28" color="#4886f9"/>
+          <view>
+             <i-icon type="scan" size="28" color="#4886f9"/>
+          </view>
           <text>人脸识别</text>
         </view>
         <view class='font24 txt-indent'>
@@ -79,7 +81,7 @@
      <view class='flex-row tabs'>
        <text wx:for="{{tabs}}" wx:for-item="item" wx:key="unique" wx:for-index="idx" class='{{idx==currentArticle?"active":""}}' bindtap='switchTab' data-idx='{{idx}}'>{{item}}</text>
      </view>
-     <view>
+     <view bindtap="goWrite">
        <i-icon type='editor' color='#ccc' size="20"/>
        <text class='gray'>写游记</text>
      </view>

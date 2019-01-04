@@ -8,25 +8,25 @@
     <view class='flex-row mg-bottom20 h-center'>
       <text>导游服务：</text>
       <i-rate bind:change="onChangeGuide" value="{{starGuide}}" size="24">
-        {{starGuide}}星
+        {{starGuideDes}}
       </i-rate>
     </view>
     <view class='flex-row mg-bottom20 h-center'>
       <text>行程安排：</text>
       <i-rate bind:change="onChangeTravel" value="{{starTravel}}" size="24">
-        {{starTravel}}星
+        {{starTravelDes}}
       </i-rate>
     </view>
     <view class='flex-row mg-bottom20 h-center'>
       <text>餐饮住宿：</text>
       <i-rate bind:change="onChangeRepast" value="{{starRepast}}" size="24">
-        {{starRepast}}星
+        {{starRepastDes}}
       </i-rate>
     </view>
     <view class='flex-row mg-bottom20 h-center'>
       <text>旅行交通：</text>
       <i-rate bind:change="onChangeTraf" value="{{starTraf}}" size="24">
-        {{starTraf}}星
+        {{starTrafDes}}
       </i-rate>
     </view>
   </view>
@@ -34,14 +34,26 @@
     <view class=' mg-bottom20'>
       <view class="page-section">
         <view class="textarea-wrp">
-          <textarea placeholder='请输入要评论的内容...' />
+          <textarea auto-height   maxlength="-1" placeholder='请输入要评论的内容...' />
         </view>
       </view>
     </view>
-    <view class='upload'>
-      <i-icon type="add" size='40' i-class='upload-icon' color='#eee'/>
+    <view class='upload-container'>
+      <view class='upload' bindtap='takePhoto'>
+        <i-icon type="add" size='40' i-class='upload-icon' color='#eee' />
+      </view>
+      <view class='upload-desc'>添加图片</view>
+      <view class='img-group flex-row'>
+        <view  wx:for="{{imageArr}}" wx:for-item="item" wx:key="item">
+            <image data-index="{{index}}" src='{{item}}' class='img-size' bindtap='previewImg'></image>
+            <view class='close' bindtap='remove' data-idx='{{index}}'>
+              <i-icon type="close" size='12' color='#ccc'/>
+            </view>
+        </view>
+      </view>
     </view>
-    <view class='upload-desc'>添加图片</view>
+    <!-- <i-upload></i-upload> -->
+    <canvas canvas-id='attendCanvasId' class='myCanvas'></canvas>
   </view>
   <view class='sendComment' bindtap='sendComment'>发表评论</view>
 </view>
