@@ -25,17 +25,22 @@ const  request = ({url,method="POST",data={}})=>{
     wx.hideNavigationBarLoading();
     if (res.code == CODE.SUCCESS)
     {
-      return Promise.resolve(res.data)
+      return res.hasOwnProperty('data') ? Promise.resolve(res.data) : Promise.resolve(res)
+    } 
+    else if (res.code == CODE.EXCEPTION){
+      toast.tip(res.message);
+       return Promise.reject(res.message)
     }
     else
     {
       toast.tip(res.message);
-      return reject();
+      return Promise.reject(res)
     }
   })
   .catch(error=>{
     wx.hideNavigationBarLoading();
-    toast.tip(TIP.network);
+    toast.tip(error||TIP.network);
+    return Promise.reject();
   })
 }
 

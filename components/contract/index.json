@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+   "i-radio-group": "../iview/radio-group/index",
+   "i-radio": "../iview/radio/index",
+   "i-icon": "../iview/icon/index",
+   "i-panel":"../iview/panel/index"
+  }
+}

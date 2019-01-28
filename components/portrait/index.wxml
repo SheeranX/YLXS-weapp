@@ -3,7 +3,7 @@
 <view style='padding:30rpx 0 10rpx 0'>
   <i-row>
     <i-col span="16" offset='2'>
-      <i-avatar src="{{src}}" size="large" i-class="img"></i-avatar>
+      <i-avatar src="{{src}}" size="large" i-class="img" wx:if="{{avatarShow?true:false}}"></i-avatar>
       <text class='font28'>{{title}}</text>
     </i-col>
      <i-col span="6" i-class="browser" wx:if="{{browser?true:false}}">
@@ -12,7 +12,7 @@
      </i-col>
   </i-row>
   <i-row>
-     <i-col span="10" offset='5'>
+     <i-col span="10" offset='2'>
       <text class='font22'>{{time}}</text>
      </i-col>
   </i-row>

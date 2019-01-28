@@ -1,0 +1,13 @@
+/* components/nocontent/index.wxss */
+.img{
+  width:200rpx;
+  height: 150rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.txt-center{
+  text-align: center;
+}
+.font24{
+  font-size: 24rpx;
+}

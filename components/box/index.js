@@ -27,7 +27,7 @@ Component({
         title: '',
         salePrice: '',
         originPrice: '',
-        star: '',
+        star: 0,
         distance: '',
         img: '',
         singlePrice: ""
@@ -35,15 +35,33 @@ Component({
     }
   },
   lifetimes: {
-    created() {
-
+    attached() {
+      // const temp = this.data.item;
+      // console.log(temp);
+      // const obj = {};
+      // for(let key in temp)
+      // {
+      //   switch(key)
+      //   {
+      //     case box.ID:
+      //       obj['ID'] = temp[key];
+      //     break;
+      //     case box.TITLE:
+      //       obj['TITLE'] = temp[key];
+      //     break;
+      //   }
+      // }
+      // console.log(obj);
+      // this.setData({
+      //   showData:obj
+      // })
     }
   },
   /**
    * 组件的初始数据
    */
   data: {
-   
+    showData:{}
   },
 
   /**

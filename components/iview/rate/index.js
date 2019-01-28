@@ -63,7 +63,9 @@ Component({
        const className = '.i-rate';
         var query = wx.createSelectorQuery().in(this)
         query.select( className ).boundingClientRect((res)=>{
+          try{
             this.data.touchesStart.pageX = res.left || 0;
+          }catch(e){}
         }).exec()
     }
 });

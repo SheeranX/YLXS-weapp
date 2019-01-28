@@ -1,0 +1,13 @@
+<!--components/nocontent/index.wxml-->
+<view wx:if="{{isOrder}}" class='txt-center font24'>
+   <image src='../../assets/images/no-order.png' class='img'></image>
+   <view>
+      <text>暂无订单信息</text>
+   </view>
+</view>
+<view class='txt-center font24' wx:else>  
+   <image src='../../assets/images/no-content.png' class='img'></image>
+   <view>
+    <text>暂无内容</text>
+   </view>
+</view>

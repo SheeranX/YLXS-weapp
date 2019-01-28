@@ -24,6 +24,24 @@ let showModal = promise.wxPromise(wx.showModal,true);
      duration:2000
    })
  }
+
+/**
+ *正在加载中
+ */
+ const loading = ()=>{
+   wx.showLoading({
+     title: '正在加载中...',
+     mask:true
+   })
+ }
+
+ /**
+  * 关闭加载
+  */
+const hideLoading = ()=>{
+  wx.hideLoading();
+}
+
 /**
  * 弹窗提示
  * @param {object} -obj 小程序弹窗封装
@@ -43,5 +61,7 @@ const modal = (obj)=>{
 module.exports = {
      success: success,
      tip:tip,
-     modal: modal
+     modal: modal,
+     loading: loading,
+     hideLoading: hideLoading
  }

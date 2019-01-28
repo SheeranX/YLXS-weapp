@@ -5,8 +5,8 @@
  * @return {string} - text 经过省略处理的文本
  */
 var ellipsis = function (text,maxlen) {
-  if (text.length > 40)
-    return text.substring(0, 40) + "..."
+  if (text.length > maxlen)
+    return text.substring(0, maxlen) + "..."
   else
     return text
 }
@@ -22,7 +22,22 @@ var moredate = function(date){
      return 'asdfasdf'
   }
 }
+
+/**
+ * 计算距离，大于100 则省略显示
+ * @param {Number} - dis 距离
+ */
+var dis = function(dis){
+  if(typeof +dis == 'number')
+  {
+    if(dis>10000)
+      return  dis = ">100"
+    else
+      return dis
+  }
+}
 module.exports  = {
   ellipsis: ellipsis,
-  moredate: moredate
+  moredate: moredate,
+  dis: dis
 };

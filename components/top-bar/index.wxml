@@ -3,13 +3,14 @@
       <i-row>
         <i-col span="6">
           <text class='font24'>智能排序</text>
-          <i-icon type="unfold" size="16" color="#80848f"></i-icon>
         </i-col>
         <i-col span="6">
           <text class='font24'>人气</text>
+          <i-icon type="unfold" size="16" color="#80848f"></i-icon>
         </i-col>
         <i-col span="6">
            <text class='font24'>评分</text>
+           <i-icon type="unfold" size="16" color="#80848f"></i-icon>
         </i-col>
         <i-col span="6"  bindtap='filterate'>
            <text class='font24'>筛选</text>

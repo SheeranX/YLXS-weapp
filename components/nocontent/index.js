@@ -1,12 +1,12 @@
-// components/inputNum/index.js
+// components/nocontent/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    value:{
-      type:Number,
-      value:1
+    isOrder:{
+      type:Boolean,
+      value:true
     }
   },
 
@@ -21,11 +21,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    minus() {
-     this.triggerEvent("minus")
-    },
-    plus() {
-     this.triggerEvent("plus");
-    }
+
   }
 })

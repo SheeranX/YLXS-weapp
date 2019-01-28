@@ -1,0 +1,36 @@
+<view class='contract'>
+  <view class='txt-center add-person flex-row' bindtap='addPerson' wx:if="{{showAdd}}">
+    <view>
+       <i-icon type="add" size='28'/><text class='font28'>新增常用联系人</text>
+    </view>
+  </view>
+  <view>
+    <i-panel>
+      <view class='contract-list flex-row s-between' wx:for="{{list}}" wx:for-index="index" position="{{position}}" wx:key="{{item.certificateTypeId}}">
+        <view class='flex-row'>
+          <view class='flex-row r-center'>
+             <view data-idx='{{index}}' bindtap='handleTap' wx:if="{{isRadio}}">
+               <label class="radio">
+                <radio value="qwert" checked="{{item.choosed}}" color="#e9536c"/>
+               </label>
+             </view>
+             <view class='flex-column contract-item font28'>
+                <text>{{item.frequentContactsName}}</text>
+                <text>证件号：{{item.certificateNo}}</text>
+                <text>手机号：{{item.frequentContactsPhone}}</text>
+            </view>
+            </view>
+          </view>
+        <view class='operate'>
+           <i-icon type="editor" size='28' bindtap='edit' data-idx='{{index}}'/>
+           <i-icon type="trash" size='28' bindtap='del' data-idx='{{index}}'/>
+        </view>
+      </view>
+   </i-panel>
+  </view>
+  <view class='txt-center add-person flex-row' bindtap='addPerson' wx:if="{{!showAdd}}">
+    <view>
+       <i-icon type="add" size='28'/><text class='font28'>新增常用联系人</text>
+    </view>
+  </view>
+</view>

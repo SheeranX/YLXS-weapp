@@ -54,6 +54,6 @@
 }
 
 .comment-grade {
-  line-height: 170rpx;
+  line-height: 190rpx;
   text-align: center;
 }

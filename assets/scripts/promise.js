@@ -4,7 +4,7 @@
  * @param{boolean}-flag 默认为false,用于区别小程序api回调函数是否存在data
  * @return {promise} - 返回promise状态
  * @example 
- * wxPromise(wx.request) 存在该api接口存在data参数，所以不传 flag
+ * wxPromise(wx.request) 该api接口的res存在data参数，所以不传 flag
  */
 function wxPromise(fn, flag) {
   let isFlag = flag || false;
@@ -20,7 +20,6 @@ function wxPromise(fn, flag) {
       }
 
       obj.fail = function (res) {
-        wx.hideLoading()
         if (!isFlag) {
           reject(res.data);
         }

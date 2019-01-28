@@ -1,0 +1,2 @@
+<!--components/image/index.wxml-->
+<image src='{{imgurl}}' binderror="handleError" class="i-class" mode='{{mode}}'></image>

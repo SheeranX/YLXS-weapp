@@ -4,6 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    avatarShow:{
+      type:Boolean,
+      value: true
+    },
     time:{ //时间
       type:String,
       value:''
@@ -26,7 +30,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**

@@ -45,6 +45,8 @@ Component({
      this.setData({
        isShow:false
      })
+    
+     this.triggerEvent("close");
     }
   }
 })

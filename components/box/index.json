@@ -3,6 +3,7 @@
   "usingComponents": {
     "i-row": "../iview/row/index",
     "i-col": "../iview/col/index",
-    "i-rate": "../iview/rate/index"
+    "i-rate": "../iview/rate/index",
+    "i-image": "../image/index"
   }
 }

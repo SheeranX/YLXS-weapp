@@ -6,6 +6,7 @@
   width: 70rpx;
   height: 70rpx;
   border-radius: 50%;
+  overflow: hidden;
 }
 .go-top image{
   width: 100%;

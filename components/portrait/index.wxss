@@ -17,4 +17,5 @@
 .browser{
  height: 80rpx;
  line-height: 80rpx;
+ overflow-y: hidden;
 }

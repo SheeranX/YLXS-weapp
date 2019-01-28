@@ -2,6 +2,9 @@
 .font20{
   font-size: 20rpx;
 }
+view{
+  overflow: visible;
+}
 .no-bg{
   background: transparent!important;
   border: none;

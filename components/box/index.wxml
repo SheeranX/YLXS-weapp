@@ -1,10 +1,11 @@
 <!--components/box/index.wxml-->
+<wxs src="../../assets/scripts/filter.wxs" module="filter" />
 <!-- 列表项 -->
   <view class="scroll-view-item">
       <i-row>
         <i-col span='10'>
           <view>
-            <image src='{{item.img}}'></image>
+            <i-image imgurl='{{item.img}}'></i-image>
           </view>
         </i-col>
         <i-col span='14'>
@@ -15,7 +16,7 @@
              <view class="{{isDetail?'':'hidden'}}">
                  <i-row>
                   <i-col span="10" wx:if="{{isDis}}">
-                    <text class='font24 disable'>距我{{item.distance}}</text>
+                    <text class='font24 disable'>距我{{filter.dis(item.distance)}}km</text>
                   </i-col>
                   <i-col span="8" wx:if="{{isStar}}">
                       <i-rate 
