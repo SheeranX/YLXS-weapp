@@ -44,6 +44,20 @@ const  request = ({url,method="POST",data={}})=>{
   })
 }
 
+/**
+ * 获取页面路径
+ */
+const getCurrentPage = () => {
+  const length = getCurrentPages().length;
+  const currentRoute = getCurrentPages()[length - 1].route;
+  const pathIndex = currentRoute.split('/').length;
+  let url = ""
+  for (let i = 0; i < pathIndex - 1; i++) {
+    url += '../'
+  } 
+  return url
+}
+
 module.exports = {
   request: request
 }
