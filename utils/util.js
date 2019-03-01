@@ -218,15 +218,23 @@ const calHeight = (ele, that, swiperHeight)=> {
     //debugger
     try {
       console.log(rect);
-      space = rect[1].top - rect[0].top - rect[0].height;
-      rect.forEach(function (item) {
-        height += item.height;
-      })
-      that.setData({
-        [swiperHeight]: (height + (space > 0 ? space * (rect.length) : 0)) * 2
-      })
+      if(Array.isArray(rect)&&rect.length>0)
+      {
+        space = rect[1].top - rect[0].top - rect[0].height;
+        rect.forEach(function (item) {
+          height += item.height;
+        })
+        that.setData({
+          [swiperHeight]: (height + (space > 0 ? space * (rect.length) : 0)) 
+        })
+      }
+      else
+      {
+        that.setData({
+          [swiperHeight]: 0
+        })
+      }
     } catch (e) { }
-
   }).exec()
 }
 
